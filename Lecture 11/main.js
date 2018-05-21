@@ -1,46 +1,57 @@
 var enterStr = prompt("Enter string included key=value \n example:", "firstName = John, email=example@gmail.com, balance=300; firstName=Test, lastName=Test, email=admin@gmail.com, balance=1000; firstName=sasha, lastName=zakablukov, email=zakablukov@gmail.com, balance=1000000; firstName=vanya, lastName=Kiselev, email=vanya@gmail.com, balance=777;firstName=Ihor, lastName=Svatok, balance=500;firstName=Test, lastName=Test, email=admingmail.com, balance=1000;firstName=katya, lastName=molotok, email=molotok@gmail.com, balance=777");
 
+var isEmpty = function(value){
+  return typeof value!=="string" || value.length===0;
+}
 
+var isRequired = function(value){
+  return !isEmpty(value);
+}
 
-var User = function(firstName, lastName, email, balance){
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-    this.balance = balance;
+var isEmail = function(email){
+  return isRequired(email) && email.indexOf("@")!==-1;
+}
 
+var validationSchema = {
+  firstName : isRequired,
+  lastName : isRequired,
+  email : isEmail,
+  balance : isFinite
+}
+
+var Validator = function(validationSchema){
+  this.validationSchema = validationSchema;
+
+  this.isValid = function(attributes){
+    var keys = Object.keys(validationSchema);
+    return keys.every(function(key){
+      return validationSchema[key](attributes[key])
+    })
+  }
+}
+
+var User = function(attributes, validationSchema){
+    this.attributes = attributes || {}
+    this.validator = new Validator(validationSchema);
     this.isValid = function(){
-        return (this.firstName!==undefined) && (this.firstName!=="") && (this.lastName!==undefined) && (this.lastName!=="")
-        && (this.email!==undefined) && (this.email.indexOf("@")!==-1) && (isFinite(this.balance));
-    }
-
-    this.toString = function(){
-      return [this.firstName, this.lastName, this.email, this.balance].join(", ") 
-    }
-
-    this.valueOf = function(){
-      return this.balance 
+        return this.validator.isValid(this.attributes)
     }
 }
 
-var initObj = function(string, SomeClass){
-    
-    var allUsers;
-    var objAfterValid = [];
-    
-    allUsers = string.split(";").map(function(userAtrrStr){
-        return userAtrrStr.split(",").reduce(function(result, keyValueString){
+var initObj = function(string){
+    var objects = string.split(";").map(function(userAtrrStr){
+        var objAttributes= userAtrrStr.split(",").reduce(function(result, keyValueString){
             var keyAndValue = keyValueString.split('=');
             result[keyAndValue[0].trim()] = keyAndValue[1].trim();
             return result;
-        }, new SomeClass)
-    })
+        }, {})
 
-    for(var i=0; i<allUsers.length; i++){
-      if(allUsers[i].isValid()){
-        objAfterValid.push(allUsers[i]);
-      }
-    }
-    return objAfterValid;
+        return new User(objAttributes, validationSchema)
+    })
+    var objectsAfterValid = objects.filter(function(objectUser){
+        return objectUser.isValid();
+    })
+    return objectsAfterValid
 }
 
 var UsersCollection = function(user){
@@ -79,33 +90,78 @@ var UsersCollection = function(user){
   }
   this.findBy = function(propertyName, propertyValue){
     return this.users.filter(function(element, index) {
-      for(var key in element){
-        if(key===propertyName && element[key]===propertyValue){
+      for(var key in element.attributes){
+        if(key===propertyName && element.attributes[key]===propertyValue){
           return element
         }
       }
     });
   }
-  /*this.sortBy = function(propertyName, order){
-    for(var i = 0; i < this.users.length-1; i++){
-      return this.users.sort(function(this.users[i][propertyName], this.users[i+1][propertyName]){
-          return (this.users[i+1][propertyName]) - (this.users[i][propertyName]) 
-      })
-    } 
-   }*/
+  this.sortBy = function(propertyName, order){
+    if(order === "asc"){
+      this.users.sort(function(a, b){
+        if(a.attributes[propertyName] < b.attributes[propertyName]){
+          return -1
+        } 
+        else if(a.attributes[propertyName] > b.attributes[propertyName]){
+          return 1
+        }
+        else
+          return 0
+      });
+    }
+    if(order === "desc"){
+      this.users.sort(function(b, a){
+        if(a.attributes[propertyName] < b.attributes[propertyName]){
+          return -1
+        } 
+        else if(a.attributes[propertyName] > b.attributes[propertyName]){
+          return 1
+        }
+        else
+          return 0
+      });
+    }
+    return this.users
+  }
 }
 
 
-var user1 = new User("sasha", "zakablukov", "zak@gmail.com", 900);
-var user2 = new User("vanya", "kiselev", "sa@gmail.com", 670);
-var user3 = new User("sveta", "ssssaa", "5rete@gmail.com", 900);
-var user4 = new User("katya", "bcbcb", "katyaa@gmail.com", 890);
+var user1 = new User({
+  firstName : "sasha",
+  lastName : "zak",
+  email : "zak@gmail.com",
+  balance : "222"
+}, validationSchema);
+var user2 = new User({
+  firstName : "vova",
+  lastName : "voka",
+  email : "zovo@gmail.com",
+  balance : "100"
+}, validationSchema);
+var user3 = new User({
+  firstName : "s",
+  lastName : "z",
+  email : "z@gmail.com",
+  balance : "2"
+}, validationSchema);
+var user4 = new User({
+  firstName : "viv",
+  lastName : "viiiv",
+  email : "viv@gmail.com",
+  balance : "6"
+}, validationSchema);
 
-var arrOfObj = initObj(enterStr, User);
+
+
+var arrOfObj = initObj(enterStr);
 console.log(arrOfObj);
 
 
 var userList = new UsersCollection(user1);
 userList.addAll(arrOfObj);
 userList.show();
-userList.add(user1).add(user2).clear().addAll([user3, user4]).remove(user3).show();
+userList.add(user1).add(user2).clear().addAll([user3, user4]).remove(user3).show().add(user1);
+
+console.log(userList.findBy("firstName", "sasha"));
+console.log(userList.sortBy("balance", "desc"));
