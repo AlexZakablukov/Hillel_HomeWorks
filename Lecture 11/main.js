@@ -57,48 +57,49 @@ var initObj = function(string){
 
 var UsersCollection = function(user){
   this.users = [].concat(user);
+}
 
-  this.show = function(){
+UsersCollection.prototype.show = function(){
     this.users.forEach(function(element){
       console.log(element);
     });
     return this
-  }
-  this.size = function(){
+}
+UsersCollection.prototype.size = function(){
     return this.users.length;
-  }
-  this.add = function(user){
+}
+UsersCollection.prototype.add = function(user){
     this.users.push(user);
     return this
-  }
-  this.remove = function(user){
+}
+UsersCollection.prototype.remove = function(user){
     for(var i = 0; i < this.users.length; i++){
       if(this.users[i] === user){
         this.users.splice(i, 1);
       }
     }
     return this
-  }
-  this.addAll = function(usersArray){
+}
+UsersCollection.prototype.addAll = function(usersArray){
     for(var i = 0; i < usersArray.length; i++){
       this.users.push(usersArray[i]);
     }
     return this
-  }
-  this.clear = function(){
+}
+UsersCollection.prototype.clear = function(){
     this.users = [];
     return this
-  }
-  this.findBy = function(propertyName, propertyValue){
+}
+UsersCollection.prototype.findBy = function(propertyName, propertyValue){
     return this.users.filter(function(element, index) {
       for(var key in element.attributes){
         if(key===propertyName && element.attributes[key]===propertyValue){
           return element
         }
       }
-    });
-  }
-  this.sortBy = function(propertyName, order){
+  });
+}
+UsersCollection.prototype.sortBy = function(propertyName, order){
     var sortProp = function(a, b){
         if(a.attributes[propertyName] < b.attributes[propertyName]){
           return -1
@@ -117,9 +118,7 @@ var UsersCollection = function(user){
        this.users.reverse(); 
     }
     return this.users
-  }
 }
-
 
 var user1 = new User({
   firstName : "sasha",
