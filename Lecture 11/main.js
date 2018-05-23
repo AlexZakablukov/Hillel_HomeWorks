@@ -99,29 +99,22 @@ var UsersCollection = function(user){
     });
   }
   this.sortBy = function(propertyName, order){
+    var sortProp = function(a, b){
+        if(a.attributes[propertyName] < b.attributes[propertyName]){
+          return -1
+        } 
+        else if(a.attributes[propertyName] > b.attributes[propertyName]){
+          return 1
+        }
+        else
+          return 0
+      }
     if(order === "asc"){
-      this.users.sort(function(a, b){
-        if(a.attributes[propertyName] < b.attributes[propertyName]){
-          return -1
-        } 
-        else if(a.attributes[propertyName] > b.attributes[propertyName]){
-          return 1
-        }
-        else
-          return 0
-      });
-    }
+       this.users.sort(sortProp);
+     }
     if(order === "desc"){
-      this.users.sort(function(b, a){
-        if(a.attributes[propertyName] < b.attributes[propertyName]){
-          return -1
-        } 
-        else if(a.attributes[propertyName] > b.attributes[propertyName]){
-          return 1
-        }
-        else
-          return 0
-      });
+       this.users.sort(sortProp);
+       this.users.reverse(); 
     }
     return this.users
   }
@@ -156,13 +149,17 @@ var user4 = new User({
 
 
 var arrOfObj = initObj(enterStr);
-console.log(arrOfObj);
+// console.log(arrOfObj);
 
 
 var userList = new UsersCollection(user1);
 userList.addAll(arrOfObj);
-userList.show();
-userList.add(user1).add(user2).clear().addAll([user3, user4]).remove(user3).show().add(user1);
 
+userList.add(user1).add(user2).clear().addAll([user3, user4]).remove(user3).add(user1).addAll(arrOfObj).show();
+console.log("====================================");
 console.log(userList.findBy("firstName", "sasha"));
+console.log("====================================");
 console.log(userList.sortBy("balance", "desc"));
+console.log("====================================");
+console.log(userList.sortBy("balance", "asc"));
+
