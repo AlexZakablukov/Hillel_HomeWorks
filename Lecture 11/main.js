@@ -21,21 +21,22 @@ var validationSchema = {
 
 var Validator = function(validationSchema){
   this.validationSchema = validationSchema;
+}
 
-  this.isValid = function(attributes){
+Validator.prototype.isValid = function(attributes){
     var keys = Object.keys(validationSchema);
     return keys.every(function(key){
       return validationSchema[key](attributes[key])
     })
-  }
 }
 
 var User = function(attributes, validationSchema){
     this.attributes = attributes || {}
     this.validator = new Validator(validationSchema);
-    this.isValid = function(){
+}
+
+User.prototype.isValid = function(){
         return this.validator.isValid(this.attributes)
-    }
 }
 
 var initObj = function(string){
