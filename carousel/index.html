@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .carousel{
+      position: relative;
+      margin-top: 150px;
+    }
+    .carousel-container{
+      margin: 0 auto;
+      width: 715px;
+      overflow: hidden;
+      box-shadow: inset 0 0 10px #A468D5;
+      background: #FFFA73;
+      border-radius: 10px;
+      border:  5px solid #A468D5; 
+      padding: 10px;
+    }
+    .carousel-list{
+      list-style: none;
+      white-space: nowrap;
+      width: 9999px;
+      transition: 0.5s;
+    }
+    .carousel-list li{
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .carousel-list li img{
+      display: block;
+      border-radius: 20px;
+    }
+    .arrow{
+      height: 50px;
+      font-size: 45px;
+      color: #A468D5;
+      position: absolute;
+      top: 50%;
+      margin-top: -25px;
+      cursor: pointer;
+      transition: all 0.35s ease;
+    }
+    .left-arrow{
+      left: 180px;
+    } 
+    .right-arrow{
+      right: 180px;
+    }
+    .arrow:hover i{
+      color: #3F046F;
+      transition: all 0.35s ease;
+    }
+  </style>
+</head>
+<body>
+   <div class="carousel">
+     <div class="carousel-container">
+       <ul class="carousel-list">
+         <li><img src="images/1.jpg" alt="1"></li>
+         <li><img src="images/2.jpg" alt="2"></li>
+         <li><img src="images/3.jpg" alt="3"></li>
+         <li><img src="images/4.jpg" alt="4"></li>
+         <li><img src="images/5.jpg" alt="5"></li>
+         <li><img src="images/6.jpg" alt="6"></li>
+         <li><img src="images/7.jpg" alt="7"></li>
+         <li><img src="images/8.jpg" alt="8"></li>
+         <li><img src="images/9.jpg" alt="9"></li>
+         <li><img src="images/10.jpg" alt="10"></li>
+         <li><img src="images/11.jpg" alt="11"></li>
+         <li><img src="images/12.jpg" alt="12"></li>
+         <li><img src="images/1.jpg" alt="13"></li>
+       </ul>
+     </div>
+     <div class="left-arrow arrow"><i class="fas fa-arrow-circle-left"></i></div>
+     <div class="right-arrow arrow"><i class="fas fa-arrow-circle-right"></i></div>
+   </div>
+
+  <script>
+  //настраиваемое пользователем
+  var picturesInFrame = 4;
+  var countOfSlides = 2;
+  var onePictureWidth = 175;
+  //вычисления
+  var carousel = document.querySelector(".carousel");
+  var list = carousel.querySelector(".carousel-list");
+  var items = list.querySelectorAll("li");
+  var leftArrow = carousel.querySelector(".left-arrow");
+  var rightArrow = carousel.querySelector(".right-arrow");
+  var amountOfPictures = items.length;
+  carousel.querySelector(".carousel-container").style.width = onePictureWidth * picturesInFrame + 15 + "px";
+  var maxLength = -onePictureWidth*(amountOfPictures-picturesInFrame)
+  var currentMarginLeft = 0;
+
+  rightArrow.addEventListener("click", function(event){
+    if(currentMarginLeft - onePictureWidth*countOfSlides > maxLength){
+      list.style.marginLeft = currentMarginLeft - onePictureWidth*countOfSlides + "px";
+      currentMarginLeft = parseInt(list.style.marginLeft);
+    }
+    else{
+      list.style.marginLeft = maxLength + "px";
+    }
+  })
+  leftArrow.addEventListener("click", function(event){
+    if(currentMarginLeft !== 0){
+      list.style.marginLeft = currentMarginLeft + onePictureWidth*countOfSlides + "px";
+      currentMarginLeft = parseInt(list.style.marginLeft);
+    }
+  })
+  </script>
+</body>
+</html>
+
