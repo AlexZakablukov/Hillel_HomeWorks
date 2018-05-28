@@ -105,15 +105,28 @@
     }
     else{
       list.style.marginLeft = maxLength + "px";
+      currentMarginLeft = maxLength;
     }
   })
   leftArrow.addEventListener("click", function(event){
-    if(currentMarginLeft !== 0){
+    if(currentMarginLeft + onePictureWidth*countOfSlides < 0){
       list.style.marginLeft = currentMarginLeft + onePictureWidth*countOfSlides + "px";
       currentMarginLeft = parseInt(list.style.marginLeft);
+    }
+    else{
+      list.style.marginLeft = 0 + "px";
+      currentMarginLeft = 0;
     }
   })
   </script>
 </body>
 </html>
 
+
+
+<!-- leftArrow.addEventListener("click", function(event){
+    if(currentMarginLeft < 0){
+      list.style.marginLeft = currentMarginLeft + onePictureWidth*countOfSlides + "px";
+      currentMarginLeft = parseInt(list.style.marginLeft);
+    }
+  }) -->
