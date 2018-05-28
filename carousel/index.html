@@ -48,14 +48,32 @@
       transition: all 0.35s ease;
     }
     .left-arrow{
-      left: 180px;
+      left: 10rem;
     } 
     .right-arrow{
-      right: 180px;
+      right: 10rem;
     }
     .arrow:hover i{
       color: #3F046F;
       transition: all 0.35s ease;
+    }
+    .settings{
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+    .range{
+      text-align: center;
+      width: 250px;
+      padding: 10px;
+      border: 3px solid #A468D5;
+      border-radius: 10px;
+      background: #FFFA73;
+      box-shadow: inset 0 0 10px #A468D5;
+    }
+
+    .frame-settings input{
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -77,15 +95,27 @@
          <li><img src="images/12.jpg" alt="12"></li>
          <li><img src="images/1.jpg" alt="13"></li>
        </ul>
-     </div>
-     <div class="left-arrow arrow"><i class="fas fa-arrow-circle-left"></i></div>
-     <div class="right-arrow arrow"><i class="fas fa-arrow-circle-right"></i></div>
-   </div>
-
+      </div>
+      <div class="left-arrow arrow"><i class="fas fa-arrow-circle-left"></i></div>
+      <div class="right-arrow arrow"><i class="fas fa-arrow-circle-right"></i></div>
+    </div>
+    <div class="settings">
+      <div class="frame-settings range">
+        <label for="frameSize">Количество картинок в рамке</label>
+        <br>
+        <input id="frameSize" type="range" min="1" max="5" value="3" step="1">
+      </div>
+      <div class="slide-settings range">
+        <label for="slideLength">Количество cлайдов при нажатии</label>
+        <br>
+        <input id="slideLength" type="range" min="1" max="5" value="1" step="1">
+      </div>
+    </div>
+    
   <script>
   //настраиваемое пользователем
-  var picturesInFrame = 4;
-  var countOfSlides = 2;
+  var picturesInFrame = 3;
+  var countOfSlides = 1;
   var onePictureWidth = 175;
   //вычисления
   var carousel = document.querySelector(".carousel");
@@ -94,9 +124,23 @@
   var leftArrow = carousel.querySelector(".left-arrow");
   var rightArrow = carousel.querySelector(".right-arrow");
   var amountOfPictures = items.length;
-  carousel.querySelector(".carousel-container").style.width = onePictureWidth * picturesInFrame + 15 + "px";
-  var maxLength = -onePictureWidth*(amountOfPictures-picturesInFrame)
+  var carouselContainer = carousel.querySelector(".carousel-container");
+  carouselContainer.style.width = onePictureWidth * picturesInFrame + 15 + "px";
+  var maxLength = -onePictureWidth*(amountOfPictures-picturesInFrame);
   var currentMarginLeft = 0;
+  var frameSize = document.getElementById("frameSize");
+  var slideLength = document.getElementById("slideLength");
+
+
+  frameSize.addEventListener("change", function(event){
+    picturesInFrame = frameSize.valueAsNumber;
+    carouselContainer.style.width = onePictureWidth * picturesInFrame + 15 + "px";
+    maxLength = -onePictureWidth*(amountOfPictures-picturesInFrame);
+  })
+
+  slideLength.addEventListener("change", function(event){
+    countOfSlides = slideLength.valueAsNumber;
+  })
 
   rightArrow.addEventListener("click", function(event){
     if(currentMarginLeft - onePictureWidth*countOfSlides > maxLength){
@@ -121,12 +165,3 @@
   </script>
 </body>
 </html>
-
-
-
-<!-- leftArrow.addEventListener("click", function(event){
-    if(currentMarginLeft < 0){
-      list.style.marginLeft = currentMarginLeft + onePictureWidth*countOfSlides + "px";
-      currentMarginLeft = parseInt(list.style.marginLeft);
-    }
-  }) -->
