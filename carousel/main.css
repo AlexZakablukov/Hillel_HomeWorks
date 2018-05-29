@@ -21,11 +21,14 @@
   list-style: none;
   white-space: nowrap;
   width: 9999px;
-  transition: 0.5s;
+  font-size: 0;
+  display: table;
+  /*transition: 0.5s;*/
 }
 .carousel-list li{
   display: inline-block;
   margin-right: 10px;
+  font-size: 14px;
 }
 .carousel-list li img{
   display: block;
@@ -69,3 +72,4 @@
 .frame-settings input{
   margin-top: 10px;
 }
+
