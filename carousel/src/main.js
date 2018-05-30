@@ -59,11 +59,11 @@
   }
 
   Carousel.prototype.render = function(){
-      this.carouselContainer.style.width = this.onePictureWidth * this.picturesInFrame + 15 + "px";
-      this.rightArrow.addEventListener("click", this.next);
-      this.leftArrow.addEventListener("click", this.prev)
-      this.frameRange.addEventListener("change", this.changeFrame);
-      this.slideRange.addEventListener("change", this.changeSlideCount);
+    this.carouselContainer.style.width = this.onePictureWidth * this.picturesInFrame + 15 + "px";
+    this.rightArrow.addEventListener("click", this.next);
+    this.leftArrow.addEventListener("click", this.prev)
+    this.frameRange.addEventListener("change", this.changeFrame);
+    this.slideRange.addEventListener("change", this.changeSlideCount);
   }
 
 
@@ -72,6 +72,8 @@
   var carousel2 = new Carousel(document.getElementById("carousel-wrap2"));
   carousel2.render();
 }
+
+
 
   // var frameSize = document.getElementById("frameSize");
   // var slideLength = document.getElementById("slideLength");
