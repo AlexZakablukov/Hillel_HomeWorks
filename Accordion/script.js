@@ -26,10 +26,11 @@ Accordion.prototype.setActive = function(event){
 };
 
 Accordion.prototype.delegateEvent = function(){
-	this.rootElement.addEventListener("click", this.setActive);
+	this.headingItems.forEach( function(element, index) {
+		element.addEventListener("click", this.setActive);
+	}.bind(this));
 	return this
-};
-
+}
 Accordion.prototype.render = function(){
 	this.delegateEvent();
 	return this
