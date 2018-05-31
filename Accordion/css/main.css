@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#accordion {
+  margin: 0 auto;
+  width: 600px;
+  border: 1px solid grey;
+}
+.accordion-item {
+  font-size: 18px;
+}
+.accordion-heading {
+  text-align: center;
+  background: lightgrey;
+  padding: 10px;
+  border: 1px solid black;
+}
+.accordion-heading:hover {
+  cursor: pointer;
+}
+.accordion-content {
+  padding: 10px;
+}
+.accordion-heading-active {
+  background: crimson;
+}
+.accordion-content-hide {
+  display: none;
+}
