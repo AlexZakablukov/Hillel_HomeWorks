@@ -8,17 +8,22 @@ var TabMenu = function(rootElement){
 
 	this.handleClick = this.handleClick.bind(this);
 	this.currentTab = 0;
-	
-	this.totalTabs = this.MenuButtonItems.length;
+	this.targetTab = null;
 }
 
 Object.defineProperty(TabMenu.prototype, "currentTab",{
 	get : function(){
-		return this._currentTab || 0 ;
+		return this._currentTab;
 	},
 	set : function(value){
 		this._currentTab = (value <= 0) ? 0 : Math.min(value, this.totalTabs-1);
 		this.calculate();
+	}
+});
+
+Object.defineProperty(TabMenu.prototype, "totalTabs", {
+	get : function(){
+		return this.MenuButtonItems.length;
 	}
 });
 
@@ -27,15 +32,15 @@ TabMenu.prototype.classNames ={
 	hide : "tabMenu-content-hide",
 }
 
-TabMenu.prototype.delegateEvents = function(){
-	this.rootElement.addEventListener("click", this.handleClick);
-	return this
-}
+
 
 TabMenu.prototype.handleClick = function(event){
-	this.currentTab = this.MenuButtonItems.indexOf(event.target);
-	this.setActive(this.MenuButtonItems);
-	this.hideAndShow(this.MenuContentItems);
+	this.targetTab = this.MenuButtonItems.indexOf(event.target)
+	if(this.targetTab!==-1){
+		this.currentTab = this.targetTab;
+		this.setActive(this.MenuButtonItems);
+		this.hideAndShow(this.MenuContentItems);
+	}
 };
 
 TabMenu.prototype.setActive = function(elementCollection){
@@ -67,6 +72,11 @@ TabMenu.prototype.calculate = function(){
 	this.hideAndShow(this.MenuContentItems);
 	return this
 };
+
+TabMenu.prototype.delegateEvents = function(){
+	this.rootElement.addEventListener("click", this.handleClick);
+	return this
+}
 
 TabMenu.prototype.render = function(){
 	this.delegateEvents();
