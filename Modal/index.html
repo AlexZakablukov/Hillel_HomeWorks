@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Modal</title>
+	
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+	<button id="alert">Открыть alert</button>
+	<button id="confirm">Открыть confirm</button>
+	<button id="prompt">Открыть prompt</button>
+	
+	<div class="wrapper">
+		<h2>Ответ на вопрос:</h2>
+		<div id="confirm-answer" class = "box">
+			
+		</div>
+	</div>
+	
+	<div class="wrapper">
+		<h2>Введенный текст</h2>
+		<div id="prompt-text" class = "box">
+			
+		</div>
+	</div>
+
+	<div id="modal1" class = "modal modal-success">
+		<div class="modal__content">
+			<div class="modal__header">
+				<span class="button-close">&times;</span>
+			</div>
+			<div class="modal__body">
+				<h1>Здарова, щеглы!</h1>
+				<p>
+					Нажмите ОК, чтобы смириться
+				</p>
+			</div>
+			<div class="modal__footer">
+				<button class = "button-ok btn">OK</button>
+			</div>
+		</div>
+	</div>
+	
+	<div id="modal2" class = "modal modal-info">
+		<div class="modal__content">
+			<div class="modal__header">
+				<span class="button-close">&times;</span>
+			</div>
+			<div class="modal__body">
+				<h1>Здарова, щеглы!</h1>
+				<p>
+					Смирились?
+				</p>
+			</div>
+			<div class="modal__footer">
+				<button class = "button-yes btn">YES</button>
+				<button class = "button-no btn">NO</button>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="modal3" class = "modal modal-warning">
+		<div class="modal__content">
+			<div class="modal__header">
+				<span class="button-close">&times;</span>
+			</div>
+			<div class="modal__body">
+				<h1>Здарова, щеглы!</h1>
+				<p>
+					Введите что хотите
+				</p>
+				<input type="text" id="promptInput">
+			</div>
+			<div class="modal__footer">
+				<button class ="button-accept btn">OK</button>
+			</div>
+		</div>
+	</div>
+	
+
+	<script src="script.js"></script>
+	<script>
+		var modal1 = new AlertModal(document.getElementById("modal1"));
+		modal1.render();
+		var modal2 = new ConfirmModal(document.getElementById("modal2"));
+		modal2.render();
+		var modal3 = new PromptModal(document.getElementById("modal3"));
+		modal3.render();
+		document.getElementById("alert").addEventListener("click", modal1.toggleOpen);
+		document.getElementById("confirm").addEventListener("click", modal2.toggleOpen);
+		document.getElementById("prompt").addEventListener("click", modal3.toggleOpen);
+	</script>
+</body>
+</html>
