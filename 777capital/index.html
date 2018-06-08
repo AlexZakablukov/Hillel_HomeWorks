@@ -1,70 +1,290 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-	<!-- Required meta tags -->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Document</title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu:300,500,700&amp;subset=cyrillic" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
-		<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+
+    <!-- Useful meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow, noodp">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500|Ubuntu:300,500,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 <body>
-	<div class="header pt-4">
-		<div class="container">
-			<div class="row align-items-end pb-4">
-				<div class="col-6 ">
-					<div class="logo">
-						<img class="img-fluid" src="img/logo.png" alt="777capital">
-					</div>
-				</div>
-				<!-- col-6 -->
-				<div class="col-6 ">
-					<div class="contact text-light d-flex align-items-center justify-content-end">
-						<img class="mr-2" src="img/phone.png" alt="phone">
-						<span class="">8 800 505 67 04</span>
-					</div>
-				</div>
-				<!-- col-6 -->
-			</div>
-			<!-- row -->
-			<div class="row">
-				<div class="col-12">
-					<h1 class="header__heading mb-3">Всегда мечтали <br> инвестировать в нефть?</h1>
-					<p class="header__description mb-4">
-						<strong>Сейчас у Вас есть уникальная возможность! <br> Цены на нефть достигают новых максимумов.<br>
-						</strong>
-						Превратите свою мечту в реальность!
-					</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-6 col-lg-3">
-						<button type="button" class="btn btn-warning btn-block mb-3 px-4 text-uppercase ">Инвестировать</button>
-						<button type="button" class="btn btn-outline-dark btn-block px-4 text-uppercase ">узнать больше</button>
-				</div>
-			</div>
-		</div>
-		<!-- container -->
-	</div>
-					
-				
-			
+  <header class="header">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-7">
+                  <div class="header__logo">
+                      <img class="img-fluid" src="assets/img/logo.png" alt="777capital">
+                  </div>
+                  <h1 class="header__heading">Всегда мечтали <br> инвестировать в нефть?</h1>
+                  <p class="header__description">
+                  <strong>Сейчас у Вас есть уникальная возможность! <br> Цены на нефть достигают новых максимумов.<br>
+                  </strong>
+                      Превратите свою мечту в реальность!
+                  </p>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <button type="button" class="btn btn-warning mr-3 button mb-3 btn-block"><img src="assets/img/arrow-down.png" class="mr-3 img-fluid" alt="arrow">Инвестировать</button>
+                    </div>
+                    <div class="col-lg-6">
+                      <button type="button" class="btn btn-outline-dark button mb-3 btn-block">узнать больше</button>
+                    </div>
+                  </div>
+                  
+                  
+              </div><!-- /.col-md-8 -->
 
+              <div class="col-md-4 offset-md-1">
+                <form method="post" class="form header__form">
+                  <div class="contact">
+                    <img class="mr-2" src="assets/img/phone.png" width="20px" alt="phone">
+                    <span class="">8 800 505 67 04</span>
+                  </div>
+                  <h2 class="form__heading">Пройдите регистрацию<br>
+                      и инвестируйте <br>
+                      прямо сейчас!
+                  </h2>
 
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationDefault01" name="firstName" placeholder="Имя" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationDefault02" name="lastName" placeholder="Фамилия" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="validationDefault03" name="country"placeholder="Страна" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="tel" class="form-control" id="validationDefault04" name="tel" placeholder="Телефон" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="validationDefault05" name="email" placeholder="Email" required>
+                  </div>
+                  <button type="submit" class="btn btn-warning button button-submit"><img src="assets/img/arrow-down.png" class="mr-3 img-fluid" alt="arrow">Инвестировать
+                  </button>
+                  <div class="private-policy">
+                    <img src="assets/img/lock.png" class="mr-2" alt="lock">
+                    <small>
+                    770capital не разглашает <br>
+                    личную информацию клиента <br>
+                    <a href="#">Политика конфиденциальности</a>
+                    </small>
+                  </div>
+                </form>    
+              </div><!-- /.col-md-4 -->
+          </div>
+          <!-- /.row -->
+      </div>
+      <!-- /.container -->
+  </header>
+  <section class="information">
+    <div class="container">
+        <h2 class="information__heading">Почему нефть дорожает?</h2>
+     <div class="row">
+        <div class="col-3">
+          <div class="information__card">
+            <img src="assets/img/icon-1.png" alt="target">
+            <p>Рост добычи нефти
+                в США
+            </p>
+          </div>
+        </div>
+        <!-- /.col-3 -->
+        <div class="col-3">
+          <div class="information__card">
+            <img src="assets/img/icon-2.png" alt="target">
+            <p>ОПЕК сокращает мировые запасы нефти</p>
+          </div>
+        </div>
+        <!-- /.col-3 -->
+        <div class="col-3">
+          <div class="information__card">
+            <img src="assets/img/icon-3.png" alt="target">
+            <p>Выход США из ядерной сделки
+              с Ираном
+               </p>
+          </div>
+        </div>
+        <!-- /.col-3 -->
+        <div class="col-3">
+          <div class="information__card">
+            <img src="assets/img/icon-4.png" alt="target">
+            <p>Геополитическая напряженность связанная с Сирией</p>
+          </div>
+        </div>
+        <!-- /.col-3 -->
+      </div>
+    <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <section class="money-banner">
+    <div class="container">
+      <h2 class="money-banner__heading">Самое время инвестировать в нефтяные активы <br>
+      <strong>и зарабатывать на их росте!</strong>
+      </h2>
+    </div>
+  </section>
+  <section class="services">
+    <div class="container">
+      <h2 class="services__heading">Мы предоставляем эксклюзивные сервисы
+      для максимально прибыльной торговли:
+      </h2>
+      <div class="row services__cards">
+        <div class="col-4">
+          <div class="services__card">
+            <img src="assets/img/icon-5.png" alt="target">
+            <p>Персональные эксперты,<br> который всегда на связи</p>
+          </div>
+        </div>
+        <!-- /.col-4 -->
+        <div class="col-4">
+          <div class="services__card">
+            <img src="assets/img/icon-6.png" alt="target">
+            <p>Качественная аналитика<br>
+              и техническая поддержка 
+            </p>
+          </div>
+        </div>
+        <!-- /.col-4 -->
+        <div class="col-4">
+          <div class="services__card">
+            <img src="assets/img/icon-7.png" alt="target">
+            <p>Торговые сигналы для совершения прибыльных сделок</p>
+          </div>
+        </div>
+        <!-- /.col-4 -->
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-6">
+          <h3 class="services__description">Компания 770capital — Ваш помошник
+              в торговле самыми популярными
+              и прибыльными мировыми активами
+          </h3>
 
+          <form method="post" class="services__form form">
+            <h3 class="form__heading">
+              Успейте приобрести активы
+            </h3>
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-group">
+                <input type="text" class="form-control" id="validationDefault01" name="firstName" placeholder="Имя" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                <input type="tel" class="form-control" id="validationDefault02" name="tel" placeholder="Телефон" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-row"> 
+              <div class="col-md-6">
+                <div class="form-group">
+                <input type="text" class="form-control" id="validationDefault03" name="lastName" placeholder="Фамилия" required>
+                </div>
+              </div><!-- /.col-6 -->
+              <div class="col-md-6">
+                <div class="form-group">
+                <input type="email" class="form-control" id="validationDefault04" name="email" placeholder="Email" required>
+                </div>
+              </div><!-- /.col-6 -->
+            </div>
+            <div class="form-row"> 
+              <div class="col-md-6">
+                <div class="form-group">
+                <input type="text" class="form-control" id="validationDefault05" name="country" placeholder="Страна" required>
+                </div>
+              </div><!-- /.col-6 -->
+              <div class="col-md-6">
+                  <button type="submit" class="btn btn-warning button button-submit btn-block"><img src="assets/img/arrow-down.png" class="mr-3 img-fluid" alt="arrow">Купить активы</button>
+              </div><!-- /.col-6 -->
+            </div>
+              <div class="private-policy">
+                <img src="assets/img/lock.png" class="mr-2" alt="lock">
+                <small>
+                770capital не разглашает личную информацию клиента <br>
+                <a href="#">Политика конфиденциальности</a>
+                </small>
+              </div>
+          </form>   
+          </div><!-- /.col-6 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+  </section>
+  
 
-
-
-
-
-
-
-
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <section class="oil-banner">
+    <div class="container">
+      <h2 class="oil-banner__heading">Нефть – самый ценный ресурс <br>
+      <strong>для мировой экономики!</strong>
+      </h2>
+    </div><!-- /.container -->
+  </section>
+    
+  <section class="comebacker">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+        <form method="post" class="comebacker__form form">
+          <h3 class="form__heading">
+              Не упустите возможность заработать<br>
+              на активах уже сейчас! 
+          </h3>
+          <div class="form-row justify-content-center">
+            <div class="col-md-3 ">
+              <div class="form-group">
+              <input type="text" class="form-control" id="validationDefault01" name="firstName" placeholder="Имя" required>
+              </div>
+            </div><!-- /.col-4 -->
+            <div class="col-md-3 ">
+              <div class="form-group">
+              <input type="text" class="form-control" id="validationDefault03" name="lastName" placeholder="Фамилия" required>
+              </div>
+            </div><!-- /.col-4 -->
+            <div class="col-md-3 ">
+              <div class="form-group">
+              <input type="tel" class="form-control" id="validationDefault02" name="tel" placeholder="Телефон" required>
+              </div>
+            </div><!-- /.col-4 -->
+          </div>
+          <div class="form-row justify-content-center"> 
+            <div class="col-md-3 ">
+              <div class="form-group">
+              <input type="email" class="form-control" id="validationDefault04" name="email" placeholder="Email" required>
+              </div>
+            </div><!-- /.col-4 -->
+            <div class="col-md-3 ">
+              <div class="form-group">
+              <input type="text" class="form-control" id="validationDefault05" name="country" placeholder="Страна" required>
+              </div>
+            </div><!-- /.col-4 -->
+            <div class="col-md-3 ">
+                <button type="submit" class="btn btn-warning button button-submit btn-block"><img src="assets/img/backet.png" class="mr-2 img-fluid" alt="arrow">Купить сейчас</button>
+            </div><!-- /.col-4 -->
+          </div>
+          <div class="private-policy">
+            <img src="assets/img/lock.png" class="mr-2" alt="lock">
+            <small>
+            770capital не разглашает личную информацию клиента 
+            <a href="#">Политика конфиденциальности</a>
+            </small>
+          </div>
+        </form>   
+      </div>
+      </div>
+    </div>
+  </section>
+  
+   <!-- JS -->
+   <script src="assets/js/main.js"></script>
 </body>
 </html>
