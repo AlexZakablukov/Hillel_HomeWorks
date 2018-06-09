@@ -6584,11 +6584,10 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .header {
     background: #a7a7a7 url("../img/first-bg.jpg") no-repeat top center/cover;
     font-weight: 500;
-    height: 100vh;
 }
 
 .header__logo {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     padding-top: 2rem;
 }
 
@@ -6607,12 +6606,17 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .button {
-    padding: 0.6rem 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
     font-size: 1.20rem;
+}
+
+.button img {
+    width: 1.7rem;
 }
 
 .contact {
@@ -6626,6 +6630,10 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .form input {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+}
+
+.form .form-group {
+    width: 100%;
 }
 
 .private-policy {
@@ -6744,31 +6752,31 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .header__form {
     background: rgba(0, 0, 0, 0.8);
+    padding-bottom: 9rem;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-align: center;
     align-items: center;
-    height: 100vh;
 }
 
 .header__form .form__heading {
     color: #fcff00;
     text-align: center;
     font-size: 1.5rem;
-    padding-top: 2rem;
+    padding: 4rem 0 2.5rem;
     font-weight: 400;
+}
+
+.header__form .form-group {
+    width: 80%;
 }
 
 .header__form .private-policy {
     margin: 1rem auto;
     -ms-flex-pack: center;
     justify-content: center;
-}
-
-.services__form {
-    display: inline-block;
 }
 
 .services__form .button-submit {
@@ -6829,6 +6837,39 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     padding-top: 0.3rem;
 }
 
+.footer .copyright {
+    font-size: 0.9rem;
+    color: #545454;
+}
+
 html {
     font-family: Ubuntu, Arial, sans-serif;
+}
+
+html {
+    font-size: 0.5rem;
+}
+
+@media (min-width: 576px) {
+    html {
+        font-size: 0.6rem;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 992px) {
+    html {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 1rem;
+    }
 }
