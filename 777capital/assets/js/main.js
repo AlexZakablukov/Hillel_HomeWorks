@@ -1,9 +1,18 @@
-// = ../../../node_modules/jquery/dist/jquery.js
-// = ../../../node_modules/popper.js/dist/umd/popper.js
-// = ../../../node_modules/bootstrap/js/dist/util.js
-// = ../../../node_modules/bootstrap/js/dist/tooltip.js
-// = ../../../node_modules/bootstrap/js/dist/modal.js
-// = ../../../node_modules/bootstrap/js/dist/alert.js
-
-// = custom/tooltip.js
-// = custom/modal.js
+$(document).ready(function(){
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+});
