@@ -6584,10 +6584,11 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .header {
     background: #a7a7a7 url("../img/first-bg.jpg") no-repeat top center/cover;
     font-weight: 500;
+    height: 100vh;
 }
 
 .header__logo {
-    margin-bottom: 8rem;
+    margin-bottom: 5rem;
     padding-top: 2rem;
 }
 
@@ -6743,20 +6744,20 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .header__form {
     background: rgba(0, 0, 0, 0.8);
-    padding-bottom: 9rem;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-align: center;
     align-items: center;
+    height: 100vh;
 }
 
 .header__form .form__heading {
     color: #fcff00;
     text-align: center;
     font-size: 1.5rem;
-    padding: 10rem 0 2.5rem;
+    padding-top: 2rem;
     font-weight: 400;
 }
 
