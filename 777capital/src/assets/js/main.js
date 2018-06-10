@@ -44,7 +44,7 @@ $(document).ready(function(){
             items:2,
             dots: true
         },
-        766:{
+        790:{
             items:3,
             dots: false,
             loop: false,
@@ -55,7 +55,7 @@ $(document).ready(function(){
     });
   $('.paysystems__carousel').owlCarousel({
     loop:true,
-    nav:true,
+    nav:false,
     autoWidth:true,
     items: 2,
     dots: false,
@@ -71,13 +71,11 @@ $(document).ready(function(){
         992:{
             items:2,
             dots: false,
-            loop: false,
             mouseDrag: false,
         },
         1200:{
             items:3,
             dots: false,
-            loop: false,
             mouseDrag: false,
         }
     }
