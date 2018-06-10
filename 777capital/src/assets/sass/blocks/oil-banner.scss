@@ -1,0 +1,13 @@
+.oil-banner{
+	background: #383737 url("../img/oil-banner.jpg") no-repeat top center /cover;
+	padding: 7.5rem 0;
+	&__heading{
+		font-family: $secondary-text;
+		font-size: 2rem;
+		font-weight: 300;
+		color: #fff;
+		text-align: center;
+		letter-spacing: 0.2rem;
+		text-transform: uppercase;
+	}
+}

@@ -1,0 +1,22 @@
+.header__form{
+	background: rgba(0,0,0,0.8);
+	padding-bottom: 9rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	.form__heading{
+		color: $yellow;
+		text-align: center;
+		font-size: 1.5rem;
+		padding: 4rem 0 2.5rem;
+		font-weight: 400;
+	}
+	.form-group{
+		width: 80%;
+	}
+	.private-policy{
+		margin: 1rem auto;
+		justify-content: center;
+	}
+}

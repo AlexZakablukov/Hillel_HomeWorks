@@ -1,0 +1,19 @@
+.services{
+	background: #2c2c2c url("../img/macbook.jpg") no-repeat top center /cover;
+	padding: 6rem 0 9rem;
+	&__heading{
+		color: $yellow;
+		text-align: center;
+		font-weight: 500;
+		font-size: 2rem;
+		margin-bottom: 4.5rem;
+	}
+	&__carousel{
+		margin-bottom: 13rem;
+	}
+	&__description{
+		font-size: 1.7rem;
+		color: #fff;
+		margin-bottom: 4rem;
+	}
+}
