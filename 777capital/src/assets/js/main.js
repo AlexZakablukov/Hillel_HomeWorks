@@ -53,4 +53,33 @@ $(document).ready(function(){
     
         }
     });
+  $('.paysystems__carousel').owlCarousel({
+    loop:true,
+    nav:true,
+    autoWidth:true,
+    items: 2,
+    dots: false,
+
+    responsive:{
+        0:{
+            items:1,
+        },
+        766:{
+            items:1,
+            center: true,
+        },
+        992:{
+            items:2,
+            dots: false,
+            loop: false,
+            mouseDrag: false,
+        },
+        1200:{
+            items:3,
+            dots: false,
+            loop: false,
+            mouseDrag: false,
+        }
+    }
+    });
 });
