@@ -55,7 +55,7 @@ $(document).ready(function(){
     });
   $('.paysystems__carousel').owlCarousel({
     loop:true,
-    nav:false,
+    nav: true,
     autoWidth:true,
     items: 2,
     dots: false,
@@ -71,12 +71,10 @@ $(document).ready(function(){
         992:{
             items:2,
             dots: false,
-            mouseDrag: false,
         },
         1200:{
             items:3,
             dots: false,
-            mouseDrag: false,
         }
     }
     });

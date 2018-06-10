@@ -29,15 +29,15 @@
 
 html{
 	font-family: $main-text;
-}
-
-html {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
 }
 
 @include media-breakpoint-up(sm) {
   html {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
+  }
+  .services__description{
+    margin-top: 1rem;
   }
 }
 
@@ -45,11 +45,17 @@ html {
   html {
     font-size: 0.8rem;
   }
+  .services__description{
+    margin-top: 5rem;
+  }
 }
 
 @include media-breakpoint-up(lg) {
   html {
     font-size: 0.9rem;
+  }
+  .services__description{
+    margin-top: 10rem;
   }
 }
 

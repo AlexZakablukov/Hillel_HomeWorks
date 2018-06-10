@@ -1,3 +1,18 @@
 .paysystems{
 	padding: 3.5rem 0 4rem;
+	.owl-carousel .owl-nav button{
+  	position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+	.owl-carousel .owl-nav button.owl-prev{
+		left: 0;
+		font-size: 4.5rem;
+		color: lightgray;
+	}
+	.owl-carousel .owl-nav button.owl-next{
+		right: 0;
+		font-size: 4.5rem;
+		color: #d3d1d1;
+	}
 }

@@ -6676,7 +6676,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .card p {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.05rem;
     margin-top: 1.5rem;
     font-weight: 300;
 }
@@ -6723,11 +6723,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     margin-bottom: 4.5rem;
 }
 
-.services__carousel {
-    margin-bottom: 13rem;
-}
-
 .services__description {
+    margin-top: 1rem;
     font-size: 1.7rem;
     color: #fff;
     margin-bottom: 4rem;
@@ -6797,6 +6794,25 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .paysystems {
     padding: 3.5rem 0 4rem;
+}
+
+.paysystems .owl-carousel .owl-nav button {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.paysystems .owl-carousel .owl-nav button.owl-prev {
+    left: 0;
+    font-size: 4.5rem;
+    color: lightgray;
+}
+
+.paysystems .owl-carousel .owl-nav button.owl-next {
+    right: 0;
+    font-size: 4.5rem;
+    color: #d3d1d1;
 }
 
 .footer {
@@ -7081,15 +7097,16 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 html {
     font-family: Ubuntu, Arial, sans-serif;
-}
-
-html {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
 }
 
 @media (min-width: 576px) {
     html {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    .services__description {
+        margin-top: 1rem;
     }
 }
 
@@ -7097,11 +7114,19 @@ html {
     html {
         font-size: 0.8rem;
     }
+
+    .services__description {
+        margin-top: 5rem;
+    }
 }
 
 @media (min-width: 992px) {
     html {
         font-size: 0.9rem;
+    }
+
+    .services__description {
+        margin-top: 10rem;
     }
 }
 
