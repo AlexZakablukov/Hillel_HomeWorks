@@ -6582,8 +6582,9 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .header {
-    background: #a7a7a7 url("../img/first-bg.jpg") no-repeat top center/cover;
+    background: #a7a7a7 url("../img/first-bg.jpg") no-repeat bottom center/cover;
     font-weight: 500;
+    height: 100vh;
 }
 
 .header__logo {
@@ -6612,7 +6613,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
-    font-size: 1.20rem;
+    font-size: 1rem;
 }
 
 .button img {
@@ -6745,7 +6746,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     color: #fcff00;
     text-align: center;
     font-size: 1.5rem;
-    padding: 4rem 0 2.5rem;
+    padding: 1rem 0 0.5rem;
     font-weight: 400;
 }
 
@@ -6754,7 +6755,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .header__form .private-policy {
-    margin: 1rem auto;
+    margin: 0.25rem auto;
     -ms-flex-pack: center;
     justify-content: center;
 }
@@ -7115,6 +7116,10 @@ html {
         font-size: 0.8rem;
     }
 
+    .header__form {
+        height: 100vh;
+    }
+
     .services__description {
         margin-top: 5rem;
     }
@@ -7127,6 +7132,10 @@ html {
 
     .services__description {
         margin-top: 10rem;
+    }
+
+    .button {
+        font-size: 1.2rem;
     }
 }
 

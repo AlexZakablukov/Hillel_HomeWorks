@@ -1,6 +1,7 @@
 .header{
-	background: #a7a7a7 url("../img/first-bg.jpg") no-repeat top center /cover;
+	background: #a7a7a7 url("../img/first-bg.jpg") no-repeat bottom center /cover;
 	font-weight: 500;
+	height: 100vh;
 	&__logo{
 		margin-bottom: 4rem;
 		padding-top: 2rem;

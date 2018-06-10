@@ -45,6 +45,10 @@ html{
   html {
     font-size: 0.8rem;
   }
+  .header__form{
+    height: 100vh;
+  }
+
   .services__description{
     margin-top: 5rem;
   }
@@ -56,6 +60,9 @@ html{
   }
   .services__description{
     margin-top: 10rem;
+  }
+  .button{
+    font-size: 1.2rem;
   }
 }
 

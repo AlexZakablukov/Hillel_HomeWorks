@@ -20,9 +20,20 @@
       <div class="container">
           <div class="row">
               <div class="col-md-7">
-                  <div class="header__logo">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="header__logo">
                       <img class="img-fluid" src="assets/img/logo.png" alt="777capital">
+                    </div>
                   </div>
+                  <div class="col-6 d-block d-md-none text-right">
+                    <div class="contact">
+                      <img class="mr-2" src="assets/img/phone.png" width="20px" alt="phone">
+                      <span class="">8 800 505 67 04</span>
+                    </div>
+                  </div>
+                </div>
+                  
                   <h1 class="header__heading">Всегда мечтали <br> инвестировать в нефть?</h1>
                   <p class="header__description">
                   <strong>Сейчас у Вас есть уникальная возможность! <br> Цены на нефть достигают новых максимумов.<br>
@@ -30,16 +41,17 @@
                       Превратите свою мечту в реальность!
                   </p>
                   <div class="row">
-                    <div class="col-lg-6 col-8">
-                      <button type="button" class="btn btn-warning mr-3 button mb-3 btn-block"><img src="assets/img/arrow-down.png" class="mr-3 img-fluid" alt="arrow">Инвестировать</button>
+                    <div class="col-6">
+                      <button type="button" class="btn btn-warning mr-3 button mb-3 btn-block"><img src="assets/img/arrow-down.png" class="mr-2 img-fluid" alt="arrow">Инвестировать</button>
                     </div>
-                    <div class="col-lg-6 col-md-8">
+                    <div class="w-100 d-block d-md-none"></div>
+                    <div class="col-6">
                       <button type="button" class="btn btn-outline-dark button mb-3 btn-block">узнать больше</button>
                     </div>
                   </div>
               </div><!-- /.col-md-7 -->
 
-              <div class="col-md-4 offset-md-1">
+              <div class="col-md-4 offset-md-1 d-none d-md-block">
                 <form method="post" class="form header__form">
                   <div class="contact">
                     <img class="mr-2" src="assets/img/phone.png" width="20px" alt="phone">
@@ -66,7 +78,7 @@
                     <input type="email" class="form-control" id="validationDefault05" name="email" placeholder="Email" required>
                   </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-warning button btn-block button-submit"><img src="assets/img/arrow-down.png" class="mr-3 img-fluid" alt="arrow">Инвестировать
+                    <button type="submit" class="btn btn-warning button btn-block button-submit"><img src="assets/img/arrow-down.png" class="mr-2 img-fluid" alt="arrow">Инвестировать
                     </button>
                   </div>
                   <div class="private-policy">
@@ -84,6 +96,46 @@
       </div>
       <!-- /.container -->
   </header>
+  <!-- ФОРМА НА МОБИЛЬНОМ -->
+  <section>
+      <div class="d-block d-md-none">
+      <form method="post" class="header__form form">
+        <h2 class="form__heading my-4 ">Пройдите регистрацию<br>
+            и инвестируйте <br>
+            прямо сейчас!
+        </h2>
+
+        <div class="form-group mx-auto w-50">
+          <input type="text" class="form-control" id="validationDefault01" name="firstName" placeholder="Имя" required>
+        </div>
+        <div class="form-group mx-auto w-50">
+          <input type="text" class="form-control" id="validationDefault02" name="lastName" placeholder="Фамилия" required>
+        </div>
+        <div class="form-group mx-auto w-50">
+          <input type="text" class="form-control" id="validationDefault03" name="country"placeholder="Страна" required>
+        </div>
+        <div class="form-group mx-auto w-50">
+          <input type="tel" class="form-control" id="validationDefault04" name="tel" placeholder="Телефон" required>
+        </div>
+        <div class="form-group mx-auto w-50">
+          <input type="email" class="form-control" id="validationDefault05" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group mx-auto w-50">
+          <button type="submit" class="btn btn-warning button btn-block button-submit"><img src="assets/img/arrow-down.png" class="mr-2 img-fluid" alt="arrow">Инвестировать
+          </button>
+        </div>
+        <div class="private-policy mt-3">
+          <img src="assets/img/lock.png" class="mr-2" alt="lock">
+          <small>
+          770capital не разглашает <br>
+          личную информацию клиента <br>
+          <a href="#">Политика конфиденциальности</a>
+          </small>
+        </div>
+      </form>    
+    </div><!-- /.col-md-12 -->
+  </section>              
+<!-- ФОРМА НА МОБИЛЬНОМ -->
   <section class="information">
     <div class="container">
         <h2 class="information__heading">Почему нефть дорожает?</h2>
@@ -192,7 +244,7 @@
               </div><!-- /.col-6 -->
               <div class="col-md-6">
                 <div class="form-group">
-                  <button type="submit" class="btn btn-warning button button-submit btn-block"><img src="assets/img/arrow-down.png" class="mr-3 img-fluid" alt="arrow">Купить активы</button>
+                  <button type="submit" class="btn btn-warning button button-submit btn-block"><img src="assets/img/arrow-down.png" class="mr-2 img-fluid" alt="arrow">Купить активы</button>
                 </div>
               </div><!-- /.col-6 -->
             </div>
