@@ -211,7 +211,7 @@ and (max-width: 479px) {
 
 /* Large screens ----------- */
 @media only screen
-and (min-width: 1824px) {
+and (max-width: 1920px) {
   .header{
     height: 100vh;
     padding-bottom: 0;
@@ -223,7 +223,7 @@ and (min-width: 1824px) {
 
 /* Large screens ----------- */
 @media only screen
-and (min-width: 2200px) {
+and (min-width: 1921px) {
   .header{
     height: auto;
     padding-bottom: 0;
