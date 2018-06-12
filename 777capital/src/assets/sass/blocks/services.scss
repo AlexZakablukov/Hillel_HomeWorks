@@ -1,6 +1,8 @@
 .services{
 	background: #2c2c2c url("../img/podMac.jpg") no-repeat top center /cover;
 	padding: 3.5rem 0 2rem;
+	position: relative;
+	overflow: hidden;
 	&__heading{
 		color: $yellow;
 		text-align: center;

@@ -25,6 +25,7 @@
 @import "blocks/comebacker__form";
 @import "blocks/paysystems";
 @import "blocks/footer";
+@import "blocks/mac";
 @import "../libs/owl.carousel.min";
 @import "../libs/owl.theme.default.min";
 
@@ -83,6 +84,9 @@ html{
   .header__form{
     height: 100vh;
     background: rgba(0,0,0,0.8);
+  }
+  .header__form .form__heading{
+    font-size: 1.2rem;
   }
   .header__form .button-submit{
     font-size: 1rem;
@@ -162,6 +166,9 @@ html{
   }
   .header__form .button-submit{
     font-size: 1.2rem;
+  }
+  .header__form .form__heading{
+    font-size: 1.5rem
   }
   .services__description{
     margin-top: 10rem;

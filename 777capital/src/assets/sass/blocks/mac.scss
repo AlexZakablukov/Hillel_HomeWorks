@@ -1,0 +1,54 @@
+.mac{
+	position: absolute;
+	top:50%;
+	right: -10%;
+	max-width: 60%;
+}
+
+@media only screen and (max-width: 1350px){
+	.mac{
+		top: 50%;
+	}
+}
+@media only screen and (max-width: 1024px){
+	.mac{
+		top: 60%;
+	}
+}
+@media only screen and (max-width: 992px){
+	.mac{
+		top: 60%;
+		width: 55%;
+	}
+}
+@media only screen and (max-width: 756px){
+	.mac{
+		top: 63%;
+		width: 70%;
+	}
+}
+@media only screen and (max-width: 650px){
+	.mac{
+		top: 63%;
+		width: 80%;
+	}
+}
+@media only screen and (max-width: 580px){
+	.mac{
+		top: 65%;
+		width:100%;
+	}
+}
+@media only screen and (max-width: 480px){
+	.mac{
+		top: 65%;
+	}
+}
+
+@media only screen and (max-width: 380px){
+	.mac{
+		top: 70%;
+	}
+}
+
+

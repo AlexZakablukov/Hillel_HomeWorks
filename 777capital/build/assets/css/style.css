@@ -6669,7 +6669,6 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .form__heading {
     color: #fcff00;
     text-align: center;
-    font-size: 1.5rem;
     font-weight: 400;
 }
 
@@ -6750,6 +6749,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .services {
     background: #2c2c2c url("../img/podMac.jpg") no-repeat top center/cover;
     padding: 3.5rem 0 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .services__heading {
@@ -6780,6 +6781,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .header__form .form__heading {
     padding: 2.5rem 0 1.5rem;
+    font-size: 1.5rem;
 }
 
 .header__form .form-group {
@@ -6896,6 +6898,65 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .footer .copyright {
     font-size: 0.9rem;
     color: #545454;
+}
+
+.mac {
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    max-width: 60%;
+}
+
+@media only screen and (max-width: 1350px) {
+    .mac {
+        top: 50%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .mac {
+        top: 60%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .mac {
+        top: 60%;
+        width: 55%;
+    }
+}
+
+@media only screen and (max-width: 756px) {
+    .mac {
+        top: 63%;
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .mac {
+        top: 63%;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .mac {
+        top: 65%;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .mac {
+        top: 65%;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .mac {
+        top: 70%;
+    }
 }
 
 .owl-carousel, .owl-carousel .owl-item {
@@ -7222,6 +7283,10 @@ html {
         background: rgba(0, 0, 0, 0.8);
     }
 
+    .header__form .form__heading {
+        font-size: 1.2rem;
+    }
+
     .header__form .button-submit {
         font-size: 1rem;
     }
@@ -7319,6 +7384,10 @@ html {
 
     .header__form .button-submit {
         font-size: 1.2rem;
+    }
+
+    .header__form .form__heading {
+        font-size: 1.5rem;
     }
 
     .services__description {
