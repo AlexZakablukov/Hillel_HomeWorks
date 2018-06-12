@@ -7428,6 +7428,17 @@ html {
 
 @media only screen and (min-width: 1824px) {
     .header {
+        height: 100vh;
+        padding-bottom: 0;
+    }
+
+    .header__form {
+        height: 100vh;
+    }
+}
+
+@media only screen and (min-width: 2200px) {
+    .header {
         height: auto;
         padding-bottom: 0;
         color: #fff;
