@@ -9,6 +9,7 @@
 @import "../../../node_modules/bootstrap/scss/forms";
 @import "../../../node_modules/bootstrap/scss/custom-forms";
 @import "../../../node_modules/bootstrap/scss/nav";
+@import "../../../node_modules/bootstrap/scss/images";
 
 @import "blocks/header";
 @import "blocks/button";
@@ -30,14 +31,39 @@
 html{
 	font-family: $main-text;
   font-size: 0.7rem;
+  min-width: 320px;
 }
 
 @include media-breakpoint-up(sm) {
   html {
     font-size: 0.75rem;
   }
-  .services__description{
-    margin-top: 1rem;
+   .header__heading{
+    font-size: 2.5rem;
+  }
+  .header__description{
+    font-size: 1.3rem;
+  }
+  .button{
+    font-size: 1.2rem;
+  }
+  .oil-banner{
+    padding: 4rem 0;
+  }
+  .oil-banner__heading{
+    font-size: 1.5rem;
+  }
+  .money-banner{
+    padding: 4rem 0;
+  }
+  .money-banner__heading{
+    font-size: 1.5rem;
+  }
+  .comebacker{
+   padding: 4rem 0 2rem;
+  }
+  .footer{
+    font-size: 0.8rem;
   }
 }
 
@@ -45,12 +71,88 @@ html{
   html {
     font-size: 0.8rem;
   }
+  .header{
+    height: 100vh;
+  };
+  .header__heading{
+    font-size: 2.9rem;
+  }
+  .header__description{
+    font-size: 1.5rem;
+  }
   .header__form{
     height: 100vh;
+    background: rgba(0,0,0,0.8);
+  }
+  .header__form .button-submit{
+    font-size: 1rem;
+  }
+  .contact{
+  padding-top: 2.5rem;
+  font-size: 1.2rem;
+  }
+  .information{
+  padding: 6rem 0 4rem;
   }
 
+  .information__heading{
+    font-size: 2rem;
+    margin-bottom: 4.5rem;
+  }
+  .services{
+  padding: 6rem 0 9rem;
+  }
+  .services__heading{
+    font-size: 2rem;
+    margin-bottom: 4.5rem;
+  }
   .services__description{
     margin-top: 5rem;
+    font-size: 1.7rem;
+    margin-bottom: 4rem;
+  }
+  .services .form__heading{
+    font-size: 1.45rem;
+  }
+  .oil-banner{
+    padding: 7.5rem 0;
+  }
+  .oil-banner__heading{
+    font-size: 2rem;
+  }
+  .money-banner{
+    padding: 7.5rem 0;
+  }
+  .money-banner__heading{
+    font-size: 2rem;
+  }
+  .comebacker{
+   padding: 7rem 0 3rem;
+  }
+  .comebacker__form .form__heading{
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer{
+    font-size: 0.85rem;
+  }
+
+ .footer .nav-item:nth-child(odd) .nav-link:after{
+    content: '';
+  }
+  .footer .nav{
+    flex-direction: column;
+  }
+  .footer .nav a{
+    padding: 0.3rem 0;
+  }
+  .footer__icons{
+    flex-direction: column;
+  }
+  .footer .footer__icons img{
+    width: 1.65rem;
+    margin-right: 0;
   }
 }
 
@@ -58,16 +160,80 @@ html{
   html {
     font-size: 0.9rem;
   }
+  .header__form .button-submit{
+    font-size: 1.2rem;
+  }
   .services__description{
     margin-top: 10rem;
   }
   .button{
     font-size: 1.2rem;
   }
+  .footer{
+    font-size: 1.1rem;
+  }
 }
 
 @include media-breakpoint-up(xl) {
   html {
     font-size: 1rem;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: portrait) {
+  .header{
+    height: auto;
+    padding-bottom: 0;
+  };
+  .header__form{
+    height: auto;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width: 479px) {
+  .header{
+    height: 100vh;
+  };
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width: 1824px) {
+  .header{
+    height: auto;
+    padding-bottom: 0;
+    color: #fff;
+  };
+  .header__form{
+    height: auto;
+  }
+}
+
+@media only screen
+and (min-device-width: 576px)
+and (max-device-width: 766px){
+  ul.nav{
+    padding-right: 25%;
+  }
+}
+@media only screen
+and (min-device-width: 472px)
+and (max-device-width: 575px){
+  ul.nav{
+    padding-right: 35%;
+  }
+}
+
+@media only screen
+and (min-device-width: 385px)
+and (max-device-width: 472px){
+  ul.nav{
+    padding-right: 20%;
   }
 }

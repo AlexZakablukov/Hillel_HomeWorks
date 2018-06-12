@@ -1,23 +1,26 @@
 .header{
 	background: #a7a7a7 url("../img/first-bg.jpg") no-repeat bottom center /cover;
 	font-weight: 500;
-	height: 100vh;
+	padding-bottom: 5rem;
+	color: #111;
 	&__logo{
 		margin-bottom: 4rem;
 		padding-top: 2rem;
 	}
 	
+	
 	&__heading{
 		line-height: 1.3;
 		text-transform: uppercase;
-		font-size: 2.9rem;
+		font-size: 2.3rem;
 		font-weight: inherit;
 		margin-bottom: 2.0rem;
 	}
 
 	&__description{
-		font-size: 1.5rem;
+		font-size: 1.15rem;
 		line-height: 1.3;
-		margin-bottom: 2.0rem
+		margin-bottom: 2.0rem;
+		
 	}
 }

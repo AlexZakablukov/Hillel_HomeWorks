@@ -1,11 +1,11 @@
 .services__form{
 	.button-submit{
-		font-size: 1rem;
+		font-size: 0.9rem;
+	}
+}
+
+.services .form__heading{
 		text-align: left;
-	}
-	.form__heading{
-		color: $yellow;
-		font-size: 1.5rem;
+		font-size: 1rem;
 		margin-bottom: 1rem;
-	}
 }

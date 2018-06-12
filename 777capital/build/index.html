@@ -46,13 +46,13 @@
                     </div>
                     <div class="w-100 d-block d-md-none"></div>
                     <div class="col-6">
-                      <button type="button" class="btn btn-outline-dark button mb-3 btn-block">узнать больше</button>
+                      <button type="button" class="btn btn-outline-light button mb-3 btn-block">узнать больше</button>
                     </div>
                   </div>
               </div><!-- /.col-md-7 -->
 
               <div class="col-md-4 offset-md-1 d-none d-md-block">
-                <form method="post" class="form header__form">
+                <form method="post" action="/" class="form header__form">
                   <div class="contact">
                     <img class="mr-2" src="assets/img/phone.png" width="20px" alt="phone">
                     <span class="">8 800 505 67 04</span>
@@ -99,8 +99,8 @@
   <!-- ФОРМА НА МОБИЛЬНОМ -->
   <section>
       <div class="d-block d-md-none">
-      <form method="post" class="header__form form">
-        <h2 class="form__heading my-4 ">Пройдите регистрацию<br>
+      <form method="post" action="/" class="form header__form">
+        <h2 class="form__heading">Пройдите регистрацию<br>
             и инвестируйте <br>
             прямо сейчас!
         </h2>
@@ -198,20 +198,22 @@
              прибыльных сделок</p>
           </div>
       </div>
+      
+      
       <div class="row">
-        <div class="col-11 col-md-8 col-lg-7 col-xl-6">
+        <div class="col-12 col-lg-6">
           <h3 class="services__description">Компания 770capital — Ваш помошник
               в торговле самыми популярными
-              и прибыльными мировыми активами
+              и прибыльными мировыми активами                                                              
+          </h3>
+          <h3 class="form__heading">
+              Успейте приобрести активы  
           </h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-6">
-          <form method="post" class="services__form form">
-            <h3 class="form__heading">
-              Успейте приобрести активы
-            </h3>
+        <div class="col-6 col-md-7 col-lg-6">
+          <form method="post" action="/" class="form services__form">
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -244,7 +246,7 @@
               </div><!-- /.col-6 -->
               <div class="col-md-6">
                 <div class="form-group">
-                  <button type="submit" class="btn btn-warning button button-submit btn-block"><img src="assets/img/arrow-down.png" class="mr-2 img-fluid" alt="arrow">Купить активы</button>
+                  <button type="submit" class="btn btn-warning button btn-block"><img src="assets/img/arrow-down.png" class="mr-2 img-fluid" alt="arrow">Купить активы</button>
                 </div>
               </div><!-- /.col-6 -->
             </div>
@@ -255,9 +257,10 @@
                 <a href="#">Политика конфиденциальности</a>
                 </small>
               </div>
-          </form>   
+            </form>   
           </div><!-- /.col-6 -->
         </div><!-- /.row -->
+
       </div><!-- /.container -->
   </section>
   
@@ -274,7 +277,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-        <form method="post" class="comebacker__form form">
+        <form method="post" action="/" class="comebacker__form form">
           <h3 class="form__heading">
               Не упустите возможность заработать<br>
               на активах уже сейчас! 
@@ -313,12 +316,14 @@
               </div>
             </div><!-- /.col-3 -->
           </div>
-          <div class="private-policy">
-            <img src="assets/img/lock.png" class="mr-2" alt="lock">
-            <small>
-            770capital не разглашает личную информацию клиента 
-            <a href="#">Политика конфиденциальности</a>
-            </small>
+          <div class="col-6 offset-3 px-0 col-sm-12 offset-sm-0 px-sm-3">
+              <div class="private-policy">
+              <img src="assets/img/lock.png" class="mr-2" alt="lock">
+              <small>
+              770capital не разглашает личную информацию клиента 
+              <a href="#">Политика конфиденциальности</a>
+              </small>
+            </div>
           </div>
         </form>   
       </div>
@@ -342,49 +347,64 @@
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-8">
-          <div class="footer__logo mb-3">
-            <img src="assets/img/footer-logo.png" alt="logo">
+        <div class="col-md-7">
+          <div class="row">
+            <div class="col-3 col-md-12  px-2">
+              <div class="footer__logo mb-3 ">
+                  <img src="assets/img/footer-logo.png" class="img-fluid" alt="logo">
+              </div>
+            </div>
+            <div class="col-9 col-md-12  px-2">
+              <p class="text-muted">Все результаты работы в данной сфере индвивидуальны и зависят от каждого клиента
+              </p>
+              <address class="text-muted">
+                Payments are provided by Maxi Platinum Ltd, Bulgaria,
+                <br>
+                Plovdiv, ZIP 4000, Bul. „Iztochen“ №137, fl. 2, app. 8
+              </address>
+            </div>
           </div>
-          <p class="text-muted">Все результаты работы в данной сфере индвивидуальны и зависят от каждого клиента
-          </p>
-          <p class="text-muted">Payments are provided by Maxi Platinum Ltd, Bulgaria,
-            <br>
-          Plovdiv, ZIP 4000, Bul. „Iztochen“ №137, fl. 2, app. 8
-          </p>
-          <p class="copyright">© 2010 — 2018, 770capital</p>
         </div>
-        <!-- /.col-7 -->
-        <div class="col-4 d-flex">
-          <div class="footer__icons mr-4">
-            <img src="assets/img/footer-18.png" class="mb-3" alt="18+">
-            <img src="assets/img/footer-lock.png" class="mb-3" alt="lock">
-            <img src="assets/img/footer-shield.png" class="mb-3" alt="security">
+        <div class="col-md-5 ">
+          <div class="row d-flex ">
+            <div class="col-3 col-md-2 d-flex justify-content-center px-2">
+              <div class="footer__icons mr-2 ">
+                <img src="assets/img/footer-18.png" class="mb-3" alt="18+">
+                <img src="assets/img/footer-lock.png" class="mb-3 " alt="lock">
+                <img src="assets/img/footer-shield.png" class="mb-3" alt="security">
+              </div>
+            </div>
+            <div class="col-9 col-md-10 px-2">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Пользовательское соглашение</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Предупреждение о риске</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Политика конфиденциальности</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Условия торговли</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Свидетельство АРБ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Свидетельство о регистрации</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Пользовательское соглашение</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Политика конфиденциальности</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Предупреждение о риске</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Условия торговли</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Свидетельство о регистрации</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Свидетельство АРБ</a>
-            </li>
-          </ul>
         </div>
-        <!-- /.col-4 offset-1 -->
       </div>
       <!-- /.row -->
+      <div class="row">
+        <div class="col-9 offset-3 col-md-12 offset-md-0 px-2">
+           <p class="copyright mt-3 ">© 2010 — 2018, 770capital</p>
+        </div>
+      </div>
     </div>
     <!-- /.container -->
   </footer>

@@ -1,15 +1,11 @@
 .header__form{
-	background: rgba(0,0,0,0.8);
-	padding-bottom: 9rem;
+	background: rgba(0,0,0,1);
+	padding-bottom: 3rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	.form__heading{
-		color: $yellow;
-		text-align: center;
-		font-size: 1.5rem;
-		padding: 1rem 0 0.5rem;
-		font-weight: 400;
+		padding: 2.5rem 0 1.5rem;
 	}
 	.form-group{
 		width: 80%;

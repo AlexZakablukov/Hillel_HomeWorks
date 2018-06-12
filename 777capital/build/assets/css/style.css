@@ -6581,10 +6581,39 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     display: block;
 }
 
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-thumbnail {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.figure {
+    display: inline-block;
+}
+
+.figure-img {
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.figure-caption {
+    font-size: 90%;
+    color: #6c757d;
+}
+
 .header {
     background: #a7a7a7 url("../img/first-bg.jpg") no-repeat bottom center/cover;
     font-weight: 500;
-    height: 100vh;
+    padding-bottom: 5rem;
+    color: #111;
 }
 
 .header__logo {
@@ -6595,13 +6624,13 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .header__heading {
     line-height: 1.3;
     text-transform: uppercase;
-    font-size: 2.9rem;
+    font-size: 2.3rem;
     font-weight: inherit;
     margin-bottom: 2.0rem;
 }
 
 .header__description {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     line-height: 1.3;
     margin-bottom: 2.0rem;
 }
@@ -6613,7 +6642,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .button img {
@@ -6624,8 +6653,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     font-family: "Roboto", sans-serif;
     color: #fff;
     font-weight: 300;
-    padding-top: 2.5rem;
-    font-size: 1.2rem;
+    padding-top: 3rem;
+    font-size: 1rem;
 }
 
 .form input {
@@ -6635,6 +6664,13 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .form .form-group {
     width: 100%;
+}
+
+.form__heading {
+    color: #fcff00;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
 .private-policy {
@@ -6653,7 +6689,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .information {
     background: #2c2c2c url("../img/second-bg.jpg") no-repeat top center/cover;
-    padding: 6rem 0 4rem;
+    padding: 3.5rem 0 2rem;
 }
 
 .information__heading {
@@ -6661,8 +6697,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     text-transform: uppercase;
     text-align: center;
     font-weight: 500;
-    font-size: 2rem;
-    margin-bottom: 4.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
 }
 
 .card {
@@ -6684,11 +6720,11 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .money-banner {
     background: #383737 url("../img/money-banner.jpg") no-repeat top center/cover;
-    padding: 7.5rem 0;
+    padding: 2rem 0;
 }
 
 .money-banner__heading {
-    font-size: 2rem;
+    font-size: 1rem;
     color: #fff;
     font-weight: 300;
     text-align: center;
@@ -6698,12 +6734,12 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .oil-banner {
     background: #383737 url("../img/oil-banner.jpg") no-repeat top center/cover;
-    padding: 7.5rem 0;
+    padding: 2rem 0;
 }
 
 .oil-banner__heading {
     font-family: "Roboto", sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 300;
     color: #fff;
     text-align: center;
@@ -6712,28 +6748,28 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .services {
-    background: #2c2c2c url("../img/macbook.jpg") no-repeat top center/cover;
-    padding: 6rem 0 9rem;
+    background: #2c2c2c url("../img/podMac.jpg") no-repeat top center/cover;
+    padding: 3.5rem 0 2rem;
 }
 
 .services__heading {
     color: #fcff00;
     text-align: center;
     font-weight: 500;
-    font-size: 2rem;
-    margin-bottom: 4.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
 }
 
 .services__description {
-    margin-top: 1rem;
-    font-size: 1.7rem;
+    margin-top: 3rem;
+    font-size: 1rem;
     color: #fff;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 
 .header__form {
-    background: rgba(0, 0, 0, 0.8);
-    padding-bottom: 9rem;
+    background: black;
+    padding-bottom: 3rem;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -6743,11 +6779,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .header__form .form__heading {
-    color: #fcff00;
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 1rem 0 0.5rem;
-    font-weight: 400;
+    padding: 2.5rem 0 1.5rem;
 }
 
 .header__form .form-group {
@@ -6761,25 +6793,24 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .services__form .button-submit {
-    font-size: 1rem;
-    text-align: left;
+    font-size: 0.9rem;
 }
 
-.services__form .form__heading {
-    color: #fcff00;
-    font-size: 1.5rem;
+.services .form__heading {
+    text-align: left;
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
 .comebacker {
     background: #2c2c2c url("../img/fourth-bg.jpg") no-repeat top center/cover;
-    padding: 7rem 0 3rem;
+    padding: 2rem 0 1rem;
 }
 
 .comebacker__form .form__heading {
     color: #fcff00;
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -6819,22 +6850,47 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .footer {
     background: #2c2c2c;
     padding: 3rem 0 1.5rem;
+    font-size: 0.7rem;
+}
+
+.footer__logo {
+    min-width: 65px;
 }
 
 .footer__icons {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-pack: center;
     justify-content: center;
     -ms-flex-align: center;
     align-items: center;
 }
 
+.footer__icons img {
+    margin-right: 0.4rem;
+    width: 1.45rem;
+}
+
+.footer__icons img:last-child {
+    margin-right: 0;
+}
+
+.footer .nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
 .footer .nav-item a {
-    padding-bottom: 0.3rem;
-    padding-top: 0.3rem;
+    padding: 0;
+    text-decoration: none;
+}
+
+.footer .nav-item:nth-child(odd) .nav-link:after {
+    content: ' |\00a0';
 }
 
 .footer .copyright {
@@ -7099,6 +7155,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 html {
     font-family: Ubuntu, Arial, sans-serif;
     font-size: 0.7rem;
+    min-width: 320px;
 }
 
 @media (min-width: 576px) {
@@ -7106,8 +7163,40 @@ html {
         font-size: 0.75rem;
     }
 
-    .services__description {
-        margin-top: 1rem;
+    .header__heading {
+        font-size: 2.5rem;
+    }
+
+    .header__description {
+        font-size: 1.3rem;
+    }
+
+    .button {
+        font-size: 1.2rem;
+    }
+
+    .oil-banner {
+        padding: 4rem 0;
+    }
+
+    .oil-banner__heading {
+        font-size: 1.5rem;
+    }
+
+    .money-banner {
+        padding: 4rem 0;
+    }
+
+    .money-banner__heading {
+        font-size: 1.5rem;
+    }
+
+    .comebacker {
+        padding: 4rem 0 2rem;
+    }
+
+    .footer {
+        font-size: 0.8rem;
     }
 }
 
@@ -7116,18 +7205,120 @@ html {
         font-size: 0.8rem;
     }
 
+    .header {
+        height: 100vh;
+    }
+
+    .header__heading {
+        font-size: 2.9rem;
+    }
+
+    .header__description {
+        font-size: 1.5rem;
+    }
+
     .header__form {
         height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .header__form .button-submit {
+        font-size: 1rem;
+    }
+
+    .contact {
+        padding-top: 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    .information {
+        padding: 6rem 0 4rem;
+    }
+
+    .information__heading {
+        font-size: 2rem;
+        margin-bottom: 4.5rem;
+    }
+
+    .services {
+        padding: 6rem 0 9rem;
+    }
+
+    .services__heading {
+        font-size: 2rem;
+        margin-bottom: 4.5rem;
     }
 
     .services__description {
         margin-top: 5rem;
+        font-size: 1.7rem;
+        margin-bottom: 4rem;
+    }
+
+    .services .form__heading {
+        font-size: 1.45rem;
+    }
+
+    .oil-banner {
+        padding: 7.5rem 0;
+    }
+
+    .oil-banner__heading {
+        font-size: 2rem;
+    }
+
+    .money-banner {
+        padding: 7.5rem 0;
+    }
+
+    .money-banner__heading {
+        font-size: 2rem;
+    }
+
+    .comebacker {
+        padding: 7rem 0 3rem;
+    }
+
+    .comebacker__form .form__heading {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .footer {
+        font-size: 0.85rem;
+    }
+
+    .footer .nav-item:nth-child(odd) .nav-link:after {
+        content: '';
+    }
+
+    .footer .nav {
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .footer .nav a {
+        padding: 0.3rem 0;
+    }
+
+    .footer__icons {
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .footer .footer__icons img {
+        width: 1.65rem;
+        margin-right: 0;
     }
 }
 
 @media (min-width: 992px) {
     html {
         font-size: 0.9rem;
+    }
+
+    .header__form .button-submit {
+        font-size: 1.2rem;
     }
 
     .services__description {
@@ -7137,10 +7328,61 @@ html {
     .button {
         font-size: 1.2rem;
     }
+
+    .footer {
+        font-size: 1.1rem;
+    }
 }
 
 @media (min-width: 1200px) {
     html {
         font-size: 1rem;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .header {
+        height: auto;
+        padding-bottom: 0;
+    }
+
+    .header__form {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .header {
+        height: 100vh;
+    }
+}
+
+@media only screen and (min-width: 1824px) {
+    .header {
+        height: auto;
+        padding-bottom: 0;
+        color: #fff;
+    }
+
+    .header__form {
+        height: auto;
+    }
+}
+
+@media only screen and (min-device-width: 576px) and (max-device-width: 766px) {
+    ul.nav {
+        padding-right: 25%;
+    }
+}
+
+@media only screen and (min-device-width: 472px) and (max-device-width: 575px) {
+    ul.nav {
+        padding-right: 35%;
+    }
+}
+
+@media only screen and (min-device-width: 385px) and (max-device-width: 472px) {
+    ul.nav {
+        padding-right: 20%;
     }
 }
