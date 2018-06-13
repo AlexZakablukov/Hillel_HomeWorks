@@ -2,46 +2,63 @@
 	position: absolute;
 	top:50%;
 	right: -10%;
-	max-width: 60%;
+	max-width: 65%;
 }
-
-@media only screen and (max-width: 1350px){
+@media only screen and (min-width: 1921px){
 	.mac{
-		top: 50%;
+		top: 45%;
+		width: 45%;
 	}
 }
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1921px){
 	.mac{
-		top: 60%;
+		top: 48%;
+		width: 45%;
+	}
+}
+@media only screen and (max-width: 1700px){
+	.mac{
+		top: 50%;
+		width: 50%;
+	}
+}
+
+
+@media only screen and (max-width: 1440px){
+	.mac{
+		top: 48%;
+		width: 60%;
+	}
+}
+@media only screen and (max-width: 1200px){
+	.mac{
+		top: 54%;
+		width: 55%;
 	}
 }
 @media only screen and (max-width: 992px){
+	.mac{
+		top: 65%;
+		width: 40%;
+		right: -5%;
+	}
+}
+@media only screen and (max-width: 767px){
 	.mac{
 		top: 60%;
 		width: 55%;
 	}
 }
-@media only screen and (max-width: 756px){
+@media only screen and (max-width: 575px){
 	.mac{
-		top: 63%;
-		width: 70%;
-	}
-}
-@media only screen and (max-width: 650px){
-	.mac{
-		top: 63%;
-		width: 80%;
-	}
-}
-@media only screen and (max-width: 580px){
-	.mac{
-		top: 65%;
-		width:100%;
+		top: 62%;
+		width:55%;
 	}
 }
 @media only screen and (max-width: 480px){
 	.mac{
 		top: 65%;
+		width: 60%;
 	}
 }
 

@@ -59,7 +59,6 @@ $(document).ready(function(){
     autoWidth:true,
     items: 2,
     dots: false,
-
     responsive:{
         0:{
             items:1,
