@@ -36,7 +36,7 @@ Block.prototype.putDown = function(){
 
 Block.prototype.handleClick = function(event){
 	this.isOnTop = !this.isOnTop;
-	this.mediator.sendMessage(this, "isOnTop");
+	this.mediator.sendState(this, "isOnTop");
 	return this
 };
 
@@ -67,7 +67,7 @@ var mediator1 = {
 	addBlock : function(block){
 		this.blocks.push(block);
 	},
-	sendMessage: function (block, state) {
+	sendState: function (block, state) {
   for (var i = 0; i < this.blocks.length; i++) {
    if (this.blocks[i] !== block) {
     this.blocks[i][state] = !block[state];
