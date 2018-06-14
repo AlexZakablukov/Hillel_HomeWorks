@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+ 	<title>sdfds</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .row{
+      height: 500px;
+      background: lightgrey;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+    }
+    .block{
+      background: crimson;
+      color: #000;
+      width:200px;
+      height: 200px;
+    }
+    .top{
+      align-self: flex-start;
+    }
+  </style>
+</head>
+<body>
+	<div class="row">
+    <div id="block1" class="block"></div>
+    <div id="block2" class="block top"></div>
+    <div id="block3" class="block"></div>
+  </div>
+	<script src="main.js"></script>
+  <script>
+    var block1 = new Block(document.getElementById("block1"), mediator1);
+    var block2 = new Block(document.getElementById("block2"), mediator1);
+    var block3 = new Block(document.getElementById("block3"), mediator1);
+    block1.render();
+    block2.render();
+    block3.render();
+    mediator1.addBlock(block1);
+    mediator1.addBlock(block2);
+    mediator1.addBlock(block3);
+  </script>
+</body>
+</html>
