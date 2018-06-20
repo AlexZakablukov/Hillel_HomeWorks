@@ -117,7 +117,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".Shape--rect {\n  background: aqua;\n  width: 100px;\n  height: 100px; }\n\n.isActive {\n  outline: 2px dashed #000;\n  outline-offset: 4px; }\n", ""]);
+exports.push([module.i, ".Shape--rect {\n  background: aqua;\n  width: 100px;\n  height: 100px;\n  margin: 10px; }\n\n.isActive {\n  outline: 2px dashed #000;\n  outline-offset: 4px; }\n", ""]);
 
 // exports
 
@@ -990,12 +990,15 @@ var ShapeView = function () {
 
         this.handle = function (e) {
             var block = _this.rootElement;
-            block.style.position = "absolute";
+
             var coords = getCoords(block);
             var shiftX = e.pageX - coords.left;
             var shiftY = e.pageY - coords.top;
+            block.style.position = "absolute";
+            block.style.margin = "0";
             moveAt(e);
             document.body.appendChild(block);
+            block.style.zIndex = 1000;
             document.addEventListener("mousemove", handler);
             document.addEventListener("mouseup", function (e) {
                 document.removeEventListener("mousemove", handler);
