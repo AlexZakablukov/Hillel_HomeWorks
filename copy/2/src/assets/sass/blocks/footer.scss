@@ -1,0 +1,18 @@
+.footer{
+	background: #2c2c2c;
+	padding: 3rem 0 1.5rem;
+	&__icons{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.nav-item a{
+		padding-bottom: 0.3rem;
+		padding-top: 0.3rem;
+	}
+	.copyright{
+		font-size: 0.9rem;
+		color: #545454;
+	}
+}

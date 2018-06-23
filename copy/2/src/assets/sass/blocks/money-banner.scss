@@ -1,0 +1,13 @@
+.money-banner{
+	background: #383737 url("../img/money-banner.jpg") no-repeat top center /cover;
+	padding: 7.5rem 0;
+	&__heading{
+		font-size: 2rem;
+		color: #fff;
+		font-weight: 300;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+	}
+}
+

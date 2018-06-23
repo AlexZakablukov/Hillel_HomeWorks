@@ -1,20 +1,89 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
 body {
-  background-color: yellow;
-  color: lime; }
+  background: #ededed; }
 
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+.Editor-tools {
+  background: lightgreen;
+  padding: 10px 20px;
+  max-width: 90%;
+  margin: 10px auto; }
 
-.block {
-  width: 300px;
-  height: 300px;
-  background-color: lightgrey;
-  margin-right: 20px; }
+.Editor-toolItem {
+  font-size: 2rem;
+  color: red; }
+
+.Editor-content {
+  background-color: #F2FB8D;
+  width: 90%;
+  margin: 10px auto;
+  height: 80vh;
+  overflow: hidden;
+  position: relative; }
+
+.Shape--rect {
+  background: aqua;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  position: absolute; }
+
+.Shape--rect.isActive {
+  outline: 2px dashed #000;
+  outline-offset: 4px; }
+  .Shape--rect.isActive .sizer {
+    display: block; }
+
+.sizer {
+  display: none;
+  height: 10px;
+  width: 10px;
+  background: crimson;
+  position: absolute; }
+
+.lt {
+  top: -5px;
+  left: -5px;
+  cursor: se-resize; }
+
+.rt {
+  top: -5px;
+  right: -5px;
+  cursor: sw-resize; }
+
+.lb {
+  bottom: -5px;
+  left: -5px;
+  cursor: ne-resize; }
+
+.rb {
+  bottom: -5px;
+  right: -5px;
+  cursor: nw-resize; }
+
+.lc {
+  top: calc(50% - 5px);
+  left: -5px;
+  cursor: w-resize; }
+
+.rc {
+  top: calc(50% - 5px);
+  right: -5px;
+  cursor: e-resize; }
+
+.tc {
+  top: -5px;
+  left: calc(50% - 5px);
+  cursor: n-resize; }
+
+.bc {
+  bottom: -5px;
+  left: calc(50% - 5px);
+  cursor: s-resize; }
 
 
 /*# sourceMappingURL=main.css.map*/
