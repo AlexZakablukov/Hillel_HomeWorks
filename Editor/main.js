@@ -988,9 +988,18 @@ var ShapeView = function () {
             _this.isActive = !_this.isActive;
         };
 
-        this.handle = function (e) {
+        this.moveByKeys = function (e) {
             var block = _this.rootElement;
+            if (block.isActive) {
+                block.style.position = "absolute";
+                if (e.keyCode == "37") {
+                    block.style.left--;
+                }
+            }
+        };
 
+        this.moveByMouse = function (e) {
+            var block = _this.rootElement;
             var coords = getCoords(block);
             var shiftX = e.pageX - coords.left;
             var shiftY = e.pageY - coords.top;
@@ -1015,8 +1024,6 @@ var ShapeView = function () {
 
             function getCoords(elem) {
                 var box = elem.getBoundingClientRect();
-                console.log(box.top + pageYOffset);
-                console.log(box.left + pageXOffset);
                 return {
                     top: box.top + pageYOffset,
                     left: box.left + pageXOffset
@@ -1044,25 +1051,26 @@ var ShapeView = function () {
         value: function delegateEvents() {
             var _this2 = this;
 
+            document.addEventListener("keydown", this.moveByKeys);
             document.addEventListener("dblclick", function (event) {
                 if (_this2.rootElement.contains(event.target)) {
                     _this2.toggleActive();
                     if (!_this2.isActive) {
-                        _this2.rootElement.removeEventListener("mousedown", _this2.handle);
+                        _this2.rootElement.removeEventListener("mousedown", _this2.moveByMouse);
                     }
                 }
             });
             document.addEventListener("click", function (event) {
                 if (!_this2.rootElement.contains(event.target)) {
                     _this2.isActive = false;
-                    _this2.rootElement.removeEventListener("mousedown", _this2.handle);
+                    _this2.rootElement.removeEventListener("mousedown", _this2.moveByMouse);
                 }
             });
             this.mediator.subscribe(ShapeView.ON_ACTIVATE, function (eventName, data) {
                 if (data.target !== _this2) {
                     _this2.isActive = false;
                 } else {
-                    data.target.rootElement.addEventListener("mousedown", _this2.handle);
+                    data.target.rootElement.addEventListener("mousedown", _this2.moveByMouse);
                 }
             });
             return this;
