@@ -98,7 +98,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nbody {\n  background: #ededed; }\n\n.Editor-tools {\n  background: lightgreen;\n  padding: 10px 20px;\n  max-width: 90%;\n  margin: 10px auto; }\n\n.Editor-toolItem {\n  font-size: 2rem;\n  color: red; }\n\n.Editor-content {\n  background-color: #F2FB8D;\n  width: 90%;\n  margin: 10px auto;\n  height: 80vh;\n  overflow: hidden;\n  position: relative;\n  padding: 1rem; }\n", ""]);
+exports.push([module.i, "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n  margin: 0; }\n\nbody {\n  background: #ededed; }\n\n.Editor-tools {\n  background: lightgreen;\n  padding: 10px 20px;\n  max-width: 90%;\n  margin: 10px auto; }\n\n.Editor-toolItem {\n  font-size: 2rem;\n  color: red; }\n\n.Editor-content {\n  background-color: #F2FB8D;\n  width: 90%;\n  margin: 10px auto;\n  height: 80vh;\n  overflow: hidden;\n  position: relative; }\n", ""]);
 
 // exports
 
@@ -117,7 +117,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".Shape--rect {\n  background: aqua;\n  width: 100px;\n  height: 100px;\n  margin: 10px; }\n\n.isActive {\n  outline: 2px dashed #000;\n  outline-offset: 4px; }\n", ""]);
+exports.push([module.i, ".Shape--rect {\n  background: aqua;\n  width: 100px;\n  height: 100px;\n  margin: 10px;\n  position: absolute; }\n\n.Shape--rect.isActive {\n  outline: 2px dashed #000;\n  outline-offset: 4px; }\n  .Shape--rect.isActive .sizer {\n    display: block; }\n\n.sizer {\n  display: none;\n  height: 10px;\n  width: 10px;\n  background: crimson;\n  position: absolute; }\n\n.lt {\n  top: -5px;\n  left: -5px;\n  cursor: se-resize; }\n\n.rt {\n  top: -5px;\n  right: -5px;\n  cursor: sw-resize; }\n\n.lb {\n  bottom: -5px;\n  left: -5px;\n  cursor: ne-resize; }\n\n.rb {\n  bottom: -5px;\n  right: -5px;\n  cursor: nw-resize; }\n\n.lc {\n  top: calc(50% - 5px);\n  left: -5px;\n  cursor: w-resize; }\n\n.rc {\n  top: calc(50% - 5px);\n  right: -5px;\n  cursor: e-resize; }\n\n.tc {\n  top: -5px;\n  left: calc(50% - 5px);\n  cursor: n-resize; }\n\n.bc {\n  bottom: -5px;\n  left: calc(50% - 5px);\n  cursor: s-resize; }\n", ""]);
 
 // exports
 
@@ -988,54 +988,68 @@ var ShapeView = function () {
             _this.isActive = !_this.isActive;
         };
 
-        this.moveByKeys = function (e) {
-            var block = _this.rootElement;
-            if (block.isActive) {
-                block.style.position = "absolute";
-                if (e.keyCode == "37") {
-                    block.style.left--;
+        this.handlerMouseDown = function (_ref) {
+            var target = _ref.target,
+                clientX = _ref.clientX,
+                clientY = _ref.clientY;
+
+            // ShapeView.resize = this.sizers.some(function(sizer){
+            //     return sizer.contains(target);
+            // });
+
+            _this.sizers.forEach(function (sizer) {
+                if (sizer.contains(target)) {
+                    ShapeView.resize = true;
+                    ShapeView.typeOfSizer = sizer.classList[1];
                 }
+            });
+            _this.previousX = clientX;
+            _this.previousY = clientY;
+            _this.rootElement.X = getComputedStyle(_this.rootElement).left;
+            _this.rootElement.Y = getComputedStyle(_this.rootElement).top;
+            document.addEventListener("mousemove", _this.handlerMouseMove);
+        };
+
+        this.handlerMouseUp = function () {
+            document.removeEventListener("mousemove", _this.handlerMouseMove);
+            ShapeView.resize = false;
+            _this.prevDeltaX = 0;
+            _this.prevDeltaY = 0;
+        };
+
+        this.handlerMouseMove = function (_ref2) {
+            var clientX = _ref2.clientX,
+                clientY = _ref2.clientY;
+
+            var deltaX = clientX - _this.previousX;
+            var deltaY = clientY - _this.previousY;
+
+            if (ShapeView.resize) {
+                _this.rootElement.style.width = _this.rootElement.offsetWidth + ShapeView.sizerCoef[ShapeView.typeOfSizer].a * (deltaX - _this.prevDeltaX) + "px";
+                _this.rootElement.style.height = _this.rootElement.offsetHeight + ShapeView.sizerCoef[ShapeView.typeOfSizer].b * (deltaY - _this.prevDeltaY) + "px";
+                _this.prevDeltaX = deltaX;
+                _this.prevDeltaY = deltaY;
+
+                _this.move(ShapeView.sizerCoef[ShapeView.typeOfSizer].c * deltaX, ShapeView.sizerCoef[ShapeView.typeOfSizer].d * deltaY);
+            } else {
+                _this.move(deltaX, deltaY);
             }
         };
 
-        this.moveByMouse = function (e) {
-            var block = _this.rootElement;
-            var coords = getCoords(block);
-            var shiftX = e.pageX - coords.left;
-            var shiftY = e.pageY - coords.top;
-            block.style.position = "absolute";
-            block.style.margin = "0";
-            moveAt(e);
-            document.body.appendChild(block);
-            block.style.zIndex = 1000;
-            document.addEventListener("mousemove", handler);
-            document.addEventListener("mouseup", function (e) {
-                document.removeEventListener("mousemove", handler);
-            });
-
-            function moveAt(e) {
-                block.style.left = e.pageX - shiftX + "px";
-                block.style.top = e.pageY - shiftY + "px";
-            }
-
-            function handler(e) {
-                moveAt(e);
-            }
-
-            function getCoords(elem) {
-                var box = elem.getBoundingClientRect();
-                return {
-                    top: box.top + pageYOffset,
-                    left: box.left + pageXOffset
-                };
-            }
-            block.ondragstart = function () {
-                return false;
-            };
+        this.move = function (deltaX, deltaY) {
+            _this.rootElement.style.left = parseInt(_this.rootElement.X) + deltaX + "px";
+            _this.rootElement.style.top = parseInt(_this.rootElement.Y) + deltaY + "px";
         };
 
         this.rootElement = this.createRootElement();
+        this.sizers = this.createSizer(this.sizerPositions);
         this.mediator = mediator;
+        this.rootElement.X = "";
+        this.rootElement.Y = "";
+        this.prevDeltaX = 0;
+        this.prevDeltaY = 0;
+        this.previousX = "";
+        this.previousY = "";
     }
 
     _createClass(ShapeView, [{
@@ -1047,30 +1061,38 @@ var ShapeView = function () {
             return element;
         }
     }, {
+        key: "createSizer",
+        value: function createSizer(position) {
+            var elements = [];
+            for (var key in position) {
+                var element = document.createElement("div");
+                element.classList.add(this.classNames.sizer);
+                element.classList.add(key);
+                this.rootElement.appendChild(element);
+                elements.push(element);
+            }
+            return elements;
+        }
+    }, {
         key: "delegateEvents",
         value: function delegateEvents() {
             var _this2 = this;
 
-            document.addEventListener("keydown", this.moveByKeys);
-            document.addEventListener("dblclick", function (event) {
-                if (_this2.rootElement.contains(event.target)) {
-                    _this2.toggleActive();
-                    if (!_this2.isActive) {
-                        _this2.rootElement.removeEventListener("mousedown", _this2.moveByMouse);
-                    }
-                }
+            this.rootElement.addEventListener("dragstart", function () {
+                event.preventDefault();
             });
-            document.addEventListener("click", function (event) {
+            document.addEventListener("mouseup", this.handlerMouseUp);
+            this.rootElement.addEventListener("dblclick", function () {
+                _this2.toggleActive();
+            });
+            document.addEventListener("mousedown", function (event) {
                 if (!_this2.rootElement.contains(event.target)) {
                     _this2.isActive = false;
-                    _this2.rootElement.removeEventListener("mousedown", _this2.moveByMouse);
                 }
             });
             this.mediator.subscribe(ShapeView.ON_ACTIVATE, function (eventName, data) {
                 if (data.target !== _this2) {
                     _this2.isActive = false;
-                } else {
-                    data.target.rootElement.addEventListener("mousedown", _this2.moveByMouse);
                 }
             });
             return this;
@@ -1082,12 +1104,27 @@ var ShapeView = function () {
             return this;
         }
     }, {
+        key: "sizerPositions",
+        get: function get() {
+            return {
+                lt: "lt",
+                rt: "rt",
+                lb: "lb",
+                rb: "rb",
+                lc: "lc",
+                rc: "rc",
+                bc: "bc",
+                tc: "tc"
+            };
+        }
+    }, {
         key: "classNames",
         get: function get() {
             return {
                 root: "Shape",
                 type: "Shape--rect",
-                active: "isActive"
+                active: "isActive",
+                sizer: "sizer"
             };
         }
     }, {
@@ -1099,49 +1136,81 @@ var ShapeView = function () {
             var wasInactive = !this._isActive && value;
             this._isActive = value;
             this.rootElement.classList.toggle(this.classNames.active, this._isActive);
+
+            if (this.isActive) {
+                this.rootElement.addEventListener("mousedown", this.handlerMouseDown);
+            } else {
+                this.rootElement.removeEventListener("mousedown", this.handlerMouseDown);
+            }
+
             if (wasInactive) {
                 this.mediator.publish(ShapeView.ON_ACTIVATE, {
                     target: this
                 });
             }
         }
+    }], [{
+        key: "sizerCoef",
+        get: function get() {
+            return {
+                lt: {
+                    a: -1,
+                    b: -1,
+                    c: 1,
+                    d: 1
+                },
+                rb: {
+                    a: 1,
+                    b: 1,
+                    c: 0,
+                    d: 0
+                },
+                lb: {
+                    a: -1,
+                    b: 1,
+                    c: 1,
+                    d: 0
+                },
+                rt: {
+                    a: 1,
+                    b: -1,
+                    c: 0,
+                    d: 1
+                },
+                lc: {
+                    a: -1,
+                    b: 0,
+                    c: 1,
+                    d: 0
+                },
+                rc: {
+                    a: 1,
+                    b: 0,
+                    c: 0,
+                    d: 0
+                },
+                tc: {
+                    a: 0,
+                    b: -1,
+                    c: 0,
+                    d: 1
+                },
+                bc: {
+                    a: 0,
+                    b: 1,
+                    c: 0,
+                    d: 0
+                }
+            };
+        }
     }]);
 
     return ShapeView;
 }();
-// var block = document.querySelector("#block1");
-//
-// block.addEventListener("mousedown", function(e){
-//     var coords = getCoords(block);
-//     var shiftX = e.pageX - coords.left;
-//     var shiftY = e.pageY - coords.top;
-//     moveAt(e);
-//     document.addEventListener("mousemove", handler);
-//     document.addEventListener("mouseup", function(e){
-//         document.removeEventListener("mousemove", handler);
-//     })
-//
-//     function moveAt(e) {
-//         block.style.left = e.pageX- shiftX +"px";
-//         block.style.top = e.pageY-shiftY +"px";
-//     }
-//
-//     function handler(e){
-//         moveAt(e);
-//     }
-//
-//     function getCoords(elem) {   // кроме IE8-
-//         var box = elem.getBoundingClientRect();
-//         return {
-//             top: box.top + pageYOffset,
-//             left: box.left + pageXOffset
-//         };
-//     }
-//
-// }.bind(this))
-
 
 ShapeView.ON_ACTIVATE = "onActivate";
+ShapeView.resize = false;
+ShapeView.typeOfSizer = "";
 exports.default = ShapeView;
 
 /***/ }),
