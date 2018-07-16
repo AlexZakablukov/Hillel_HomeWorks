@@ -1,0 +1,25 @@
+$main-text: 'Gotham Pro', Arial, sans-serif; 
+$secondary-text: 'Ubuntu', Arial, sans-serif;
+$main-bgColor: #d7b940;
+$footer-bgColor: #a18b30;
+$circle-blackColor: #2c2c2c;
+$cashback-btnColor: #2c2c2c;
+$btn-color: #0075d8;
+$text-color: #2b2b2b;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1440px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1360px
+);
+
+$grid-columns: 14;

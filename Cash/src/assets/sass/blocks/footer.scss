@@ -1,0 +1,49 @@
+.footer{
+	background: $footer-bgColor;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+	.nav{
+		list-style: none;
+		font-size: 1.6rem;
+		text-align: center;
+		padding: 0;
+		&-item{
+			padding-bottom: 0.7rem;
+			display: inline-block;
+		}
+		&-link{
+			color: #fff;
+			font-weight: medium;
+			white-space: nowrap;
+		}
+	}
+	&__icons{
+		padding-top: 2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img{
+			margin-right: 2rem;
+		}
+	}
+	&__extra{
+		padding-top: 3rem;
+		margin: 0;
+		text-align: center;
+		font-size: 1.15rem;
+		color: #fff;
+	}
+	&__address{
+		padding-top: 2rem;
+		margin: 0;
+		text-align: center;
+		font-size: 1.15rem;
+		color: #fff;
+	}
+	.copyright{
+		color: #fff;
+		text-align: center;
+		font-size: 1.15rem;
+		padding-top: 2rem;
+	}
+}

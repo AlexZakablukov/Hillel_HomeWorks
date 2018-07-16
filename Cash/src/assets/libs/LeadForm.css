@@ -1,0 +1,278 @@
+input {
+    background-color: rgba(255, 255, 255, 1);
+    color: white;
+}
+.leadFormContainer {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    font-size: 1.6rem;
+    width: 100%;
+}
+
+.leadFormContainer .leadForm {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    font-size: 1em;
+    max-width: 100%;
+}
+    /*Header of form*/
+    .leadFormContainer .FormHeaderDiv {
+        text-align: center;
+    }
+
+    .leadFormContainer .FormHeader {
+        margin: auto;
+        text-transform: uppercase;
+        color: #000000;
+        font-size: 1.12em;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 700;
+        display: none;
+    }
+    /******************************/
+
+    /******DIVS***********/
+    .leadFormContainer .commonDivs {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        padding-top: 9px;
+        position: relative;
+        width: 230px;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 400;
+        font-size: 1em;
+        color: #d58945;
+    }
+    .leadFormContainer .countryDiv {
+        position: relative;
+    }
+    .leadFormContainer .helpLinkDiv {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .leadFormContainer .errMessageDiv {
+        display: none;
+        position: relative;
+        height: 12px;
+    }
+
+    /*******************/
+
+    /*Input Lables*/
+    .leadFormContainer .commonLabels {
+        position: absolute;
+        font-size: 1em;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 400;
+        color: #fff;
+        top: 20px;
+        left: 16px;
+        transition: 0.5s;
+        cursor: text;
+    }
+
+    /**********************/
+
+    .leadFormContainer .labelActive {
+        display: none;
+    }
+
+    /******Inputs***************/
+    .leadFormContainer .commonInput {
+        padding-top: 5px;
+        border-top: 2px solid #fff;
+        border-left: 2px solid #fff;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        width: 100%;
+        height: 50px;
+        font-size: 1em;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 400;
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        line-height: 35px;
+        text-indent: 15px;
+        outline: none;
+        -webkit-appearance: none;
+        -webkit-border-radius:0;
+        background-color: transparent;
+    }
+    .leadFormContainer .fnameInput {
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position-x: 10px;
+        border-radius: 5px;
+    }
+    .leadFormContainer .lnameInput {
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position-x: 10px;
+        border-radius: 5px;
+         color: #fff;
+    }
+    .leadFormContainer .countryInput {
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position-x: 10px;
+        border-radius: 5px;
+         color: #fff;
+    }
+    .leadFormContainer .emailInput {
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position-x: 10px;
+        border-radius: 5px;
+         color: #fff;
+    }
+    .labelPhone + .phoneCountryInput {
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position-x: 10px;
+         color: #fff;
+    }
+    .labelPhone.labelActive + .phoneCountryInput {
+        background-image: none;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position-x: 10px;
+         color: #fff;
+    }
+    .leadFormContainer .phoneCountryInput:focus {
+        background-image: none;
+    }
+    .leadFormContainer .fnameInput:focus {
+         border-bottom-color: black;
+    }
+
+    .leadFormContainer .lnameInput:focus {
+         border-bottom-color: black;
+    }
+
+    .leadFormContainer .countryInput:focus {
+         border-bottom-color: black;
+    }
+
+    .leadFormContainer .phoneCountryInput {
+        width: 26%;
+        color: black;
+        cursor: not-allowed;
+        text-indent: 10px;
+        border-right: none;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .leadFormContainer .phoneInput {
+        width: 75%;
+        margin-left: -2.5%;
+        text-indent: 10px;
+        color: black;
+        border-left: none;
+        border-radius: 0 5px 5px 0;
+    }
+
+    .leadFormContainer .emailInput:focus {
+       border-bottom-color: black;
+    }
+
+    .leadFormContainer .submitButton {
+      width: 100%;
+      height: 50px;
+      border: none;
+      color: #4eadfe;
+      background-color: #fff;
+      font-size: 18px;
+      border-radius: 5px;
+      font-family: 'Gotham Pro', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -webkit-border-radius:0;
+       transition: all 0.2s;
+    }
+
+    .leadFormContainer .submitButton:hover {
+       background: #19dcfe;
+        color: #fff;
+        transition: all 0.2s;
+        border: 2px solid #fff;
+    }
+
+    .leadFormContainer .helpLink {
+        font-size: 0.75em;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 400;
+        display: none;
+    }
+
+    /***************************/
+    .leadFormContainer .spanErrMessage {
+        color: #e64044;
+        font-size: 0.75em;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 400;
+        position: relative;     
+    }
+
+    .leadFormContainer .liveSearch {
+        position: absolute;
+        padding-left: 10px;
+        background-color: #f8f8f8;
+        z-index: 3;
+        width: 100%;
+        width: -moz-available;
+        width: -webkit-fill-available;
+        height: 200%;
+        overflow: auto;
+        border: 1px solid #aaaaaa;
+        color: black;
+        font-size: 16px;        
+    }
+
+    .leadFormContainer .country {
+        margin-top:10px;
+        color: #000;
+    }
+
+    .leadFormContainer .country:hover {
+        background-color: #e7e7e7;
+        cursor: pointer;
+    }
+
+    .leadFormContainer .errorInput {
+        border-bottom-color: #ff0000;
+    }
+
+    .leadFormContainer .rightInput {
+        
+    }
+    .agree{
+        text-align: center;
+    }
+
+/*Убрать изменение цвета полсе автозаполнения Chrom*/
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+/*****************************************/

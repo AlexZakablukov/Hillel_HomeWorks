@@ -1,0 +1,18 @@
+.cashback-btn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 180px;
+	height: 35px;
+	background: $cashback-btnColor;
+	border-radius: 20px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: 700;
+}
+.cashback-btn-transparent{
+	border: 1px solid $cashback-btnColor;
+	background: transparent;
+	color: $text-color;
+}

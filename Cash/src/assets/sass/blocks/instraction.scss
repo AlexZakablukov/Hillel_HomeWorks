@@ -1,0 +1,24 @@
+.instraction{
+	&__heading{
+		font-size: 3.8rem;
+		text-align: center;
+		margin: 0 auto;
+		line-height: 1;
+		font-weight: 900;
+		font-style: italic;
+		padding-bottom: 4rem;
+		padding-top: 6rem;
+	}
+	&__card{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 4rem;
+		.card__desc{
+			font-size: 1.6rem;
+			font-weight: 700;
+			line-height: 1;
+		}
+	}
+}

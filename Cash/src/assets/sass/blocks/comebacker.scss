@@ -1,0 +1,45 @@
+.comebacker{
+	&__heading{
+		text-align: center;
+		font-size: 2.1rem;
+		line-height: 1.2;
+		color: #fff;
+		padding-bottom: 1.5rem;
+	}
+	.leadFormContainer {
+		.leadForm{
+			justify-content: center;
+		}
+		.commonDivs {
+			width: 280px;
+			margin-top: 0;
+			padding-top: 10px;
+		}
+		.commonLabels {
+			color: #2b2b2b;
+		}
+		.commonInput{
+			height: 48px;
+			background: #f1f1f1;
+			color: #2b2b2b;
+		}
+		.submitButton{
+			background: #0075d8;
+			color: #fff;
+			border-radius: 5px;
+		}
+	}
+	&__policy{
+		font-family: $secondary-text;
+		font-weight: 300;
+		text-align: center;
+		padding-top: 2.5rem;
+		font-size: 1.4rem;
+		color: #fff;
+		a{
+			color: #fff;
+			text-decoration: none;
+			border-bottom: 1px solid #e9d894;
+		}
+	}
+}

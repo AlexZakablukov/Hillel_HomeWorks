@@ -1,0 +1,3 @@
+[2018-07-10 10:17:39] layer "Maestro_2016.svg копия": Expected end of input but "\u043A" found.
+[2018-07-10 10:17:39] layer "Payments are provided by Maxi Platinum Ltd, Bulgaria, Plovdiv, ": Expected end of input but "," found.
+[2018-07-10 10:17:39] layer "Payments are provided by Maxi Platinum Ltd, Bulgaria, Plovdiv, ": Expected end of input but "," found.
