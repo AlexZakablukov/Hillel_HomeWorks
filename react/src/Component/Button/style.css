@@ -1,7 +1,10 @@
 .Button{
 	padding: 1rem 2rem;
 	font-size: 1rem;
+	display: inline-flex;
+	justify-content: space-between;
 }
+
 
 .Button--red{
 	background: crimson;
@@ -12,7 +15,17 @@
 	background: green;
 	color: #fff;
 }
+.Button--black{
+	background: black;
+	color: #fff;
+}
 
 .Button--block{
 	width: 100%;
+}
+
+.Button-content{
+	line-height: 50px;
+	font-size: 2rem;
+	padding-left: 0.5rem;
 }

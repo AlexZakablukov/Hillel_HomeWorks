@@ -1,5 +1,7 @@
 .Link{
 	font-size: 20px;
+	display: inline-flex;
+	justify-content: space-between;
 }
 
 .Link--red{
@@ -8,4 +10,9 @@
 
 .Link--blue{
 	color: blue;
+}
+
+.Link-content{
+	line-height: 50px;
+	font-size: 2rem;
 }
