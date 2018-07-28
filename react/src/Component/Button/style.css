@@ -1,0 +1,18 @@
+.Button{
+	padding: 1rem 2rem;
+	font-size: 1rem;
+}
+
+.Button--red{
+	background: crimson;
+	color: #fff;
+}
+
+.Button--green{
+	background: green;
+	color: #fff;
+}
+
+.Button--block{
+	width: 100%;
+}

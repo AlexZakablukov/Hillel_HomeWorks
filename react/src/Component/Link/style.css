@@ -1,0 +1,11 @@
+.Link{
+	font-size: 20px;
+}
+
+.Link--red{
+	color: red;
+}
+
+.Link--blue{
+	color: blue;
+}
