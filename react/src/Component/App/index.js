@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './style.css';
 import Button from "../Button";
 import Link from "../Link";
+import Icon from "../Icon";
+
 
 class App extends Component {
   constructor(props){
@@ -18,7 +20,7 @@ class App extends Component {
           isBlock : !oldState.isBlock,
         }
      });
-  }
+  };
   
 
   render() {
@@ -33,6 +35,8 @@ class App extends Component {
         <Link className="Link--red">adsad</Link>
         <br/>
         <Link className="Link--blue" to="http://www.google.com">google</Link>
+        <hr/>
+        <Icon name="google"></Icon>
       </div>
     );
   }
