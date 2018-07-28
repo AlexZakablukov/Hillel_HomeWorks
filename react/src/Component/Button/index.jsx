@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import classNames from "classnames";
-
 import "./style.css"
+import withIcon from "../hocs/withIcon";
+import branch from "../hocs/branch";
 
 
 const Button = ({children, className, color, block, ...props}) =>{
@@ -27,4 +28,7 @@ Button.defaultProps = {
 	block: false,
 };
 
-export default Button;
+export default branch(
+	({iconName}) => Boolean(iconName),
+		withIcon("Button"),
+)(Button);

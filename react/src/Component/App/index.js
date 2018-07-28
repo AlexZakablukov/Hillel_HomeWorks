@@ -3,7 +3,8 @@ import './style.css';
 import Button from "../Button";
 import Link from "../Link";
 import Icon from "../Icon";
-import withIcon from  "../hocs/withIcon"
+import withIcon from  "../hocs/withIcon";
+
 
 class App extends Component {
   constructor(props){
@@ -40,10 +41,14 @@ class App extends Component {
         <Link className="Link--blue" to="http://www.google.com">google</Link>
         <hr/>
         <Icon name="google"></Icon>
-          <hr/>
+        <hr/>
         <ButtonWithIcon iconName={"google"} color={"black"}>Google</ButtonWithIcon>
         <br/>
         <LinkWithIcon iconName={"google"} to={"http://www.google.com"} target={"_blank"}>Google</LinkWithIcon>
+          <hr/>
+          <Button iconName={"google"}>Google</Button>
+          <br/>
+          <Link iconName={"google"} to={"http://www.google.com"} target={"_blank"}>Google</Link>
 
       </div>
     );

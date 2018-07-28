@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 import "./style.css"
+import withIcon from "../hocs/withIcon";
+import branch from "../hocs/branch";
 
 const Link = ({children, className, to, ...props}) =>{
 	const cn = classNames("Link", className);
@@ -21,4 +23,7 @@ Link.defaultProps = {
 	to: "#",
 };
 
-export default Link;
+export default branch(
+    ({iconName}) => Boolean(iconName),
+    withIcon("Link"),
+)(Link);
