@@ -32,7 +32,7 @@ class App extends Component {
         <br/>
         <Link className="Link--red">adsad</Link>
         <br/>
-        <Link className="Link--blue" href="http://www.google.com">google</Link>
+        <Link className="Link--blue" to="http://www.google.com">google</Link>
       </div>
     );
   }

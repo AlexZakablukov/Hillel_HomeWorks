@@ -4,21 +4,21 @@ import classNames from "classnames";
 
 import "./style.css"
 
-const Link = ({children, className, ...props}) =>{
+const Link = ({children, className, to, ...props}) =>{
 	const cn = classNames("Link", className);
 
-	return <a className = {cn} {...props}>{children}</a>;
-}
+	return <a className = {cn} href={to} {...props}>{children}</a>;
+};
 
 Link.propTypes = {
 	children : PropTypes.node.isRequired,
 	className : PropTypes.string,
-	href : PropTypes.node,
-}
+	to : PropTypes.node,
+};
 
 Link.defaultProps = {
 	className : null,
-	href: "#",
-}
+	to: "#",
+};
 
 export default Link;
