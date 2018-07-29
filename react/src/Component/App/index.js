@@ -4,6 +4,10 @@ import Button from "../Button";
 import Link from "../Link";
 import Icon from "../Icon";
 import withIcon from  "../hocs/withIcon";
+import Box from "../Box";
+import {Rnd} from "react-rnd";
+import Draggable from 'react-draggable';
+
 
 
 class App extends Component {
@@ -22,7 +26,7 @@ class App extends Component {
         }
      });
   };
-  
+
 
   render() {
       const ButtonWithIcon = withIcon("Button")(Button);
@@ -46,13 +50,20 @@ class App extends Component {
         <br/>
         <LinkWithIcon iconName={"google"} to={"http://www.google.com"} target={"_blank"}>Google</LinkWithIcon>
           <hr/>
-          <Button iconName={"google"}>Google</Button>
+          <Draggable defaultPosition={{x: 300, y: -200}}><Button iconName={"google"}>Google</Button></Draggable>
           <br/>
           <Link iconName={"google"} to={"http://www.google.com"} target={"_blank"}>Google</Link>
-
+          <hr/>
+          <Draggable defaultPosition={{x: 400, y: -100}}><Box id={"box"}></Box></Draggable>
+          <hr/>
+          <Rnd className={"Block"} default={{width: 200, height:200, x: 600, y: 200}}></Rnd>
       </div>
     );
   }
+
 }
+
+
+
 
 export default App;

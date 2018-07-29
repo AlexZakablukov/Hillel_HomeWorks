@@ -6,7 +6,7 @@ import Icon from "../Icon";
 const withIcon =(moduleName)=> {
     return (WrappedComponent) => {
         const ComponentWithIcon = ({children, iconName, ...props}) => {
-            return <WrappedComponent {...props}>
+            return <WrappedComponent  {...props}>
                 <div className={`${moduleName}-icon`}>
                     <Icon name = {iconName}/>
                 </div>
